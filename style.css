@@ -1,0 +1,91 @@
+body {
+  font-family: Montserrat;
+  background-color: #0f0f0f;
+  color: #d8d8d8;
+  margin: 0;
+  float: left;
+}
+hr {
+  background-color: #d8d8d8;
+  width: 75%;
+}
+p {
+  margin-left: 1%;
+}
+.title {
+  font-size: 7rem;
+  margin: 0;
+  float: left;
+}
+.sub-title {
+  font-size: 2rem;
+}
+.row {
+  margin-right: -1%;
+  margin-left: -1%;
+}
+.margin-bottom {
+  margin-bottom: 15%;
+}
+.margin-top {
+  margin-top: 10%;
+}
+.btn {
+  font-size: 2rem;
+  margin-top: 23%;
+}
+.col-lg-4 {
+  text-align: center;
+}
+#drugi {
+  background-color: #141414;
+}
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0%;
+}
+.btn-outline-cyan {
+    color: #00ffff;
+    border-color: #00ffff;
+}
+.btn-outline-cyan:hover {
+    color: #d8d8d8;
+    background-color: #00ffff;
+    border-color: #00ffff;
+}
+.btn-cyan:active {
+  box-shadow: none;
+  color: #00ffff;
+  background-color: transparent;
+}
+.btn-outline-orange {
+    color: #ff6600;
+    border-color: #ff6600;
+}
+.btn-outline-orange:hover {
+    color: #d8d8d8;
+    background-color: #ff6600;
+    border-color: #ff6600;
+}
+.btn-orange:active {
+  box-shadow: none;
+  color: #ff6600;
+  background-color: transparent;
+}
+.zoomIn {
+  animation-duration: 0.5s;
+}
+.animated.delay-1s {
+  animation-delay: 0.5s;
+}
+.animated.delay-2s {
+  animation-delay: 1.5s;
+}
+.animated.delay-3s {
+  animation-delay: 1.75s;
+}
+.animated.delay-4s {
+  animation-delay: 2s;
+}
