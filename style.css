@@ -1,45 +1,43 @@
+/*Wszystko*/
+.col-lg-4 {
+  text-align: center;
+  height: 100%;
+}
+.btn {
+  font-size: 2rem;
+}
+p {
+  text-indent: 2%;
+}
+h2 {
+  text-align: center;
+  font-size: 4rem;
+}
+h3 {
+  text-align: center;
+  margin: 5% 0 0 0;
+}
 body {
   font-family: Montserrat;
   background-color: #0f0f0f;
   color: #d8d8d8;
   margin: 0;
-  float: left;
 }
-hr {
-  background-color: #d8d8d8;
-  width: 75%;
+img {
+  width: 100%;
 }
-p {
-  margin-left: 1%;
+.hrdetailed {
+  width: 100%;
+  height: 0.25%;
+  border-radius: 100%;
 }
-.title {
-  font-size: 7rem;
-  margin: 0;
-  float: left;
-}
-.sub-title {
-  font-size: 2rem;
-}
-.row {
-  margin-right: -1%;
-  margin-left: -1%;
-}
-.margin-bottom {
-  margin-bottom: 15%;
-}
-.margin-top {
-  margin-top: 10%;
-}
-.btn {
-  font-size: 2rem;
-  margin-top: 23%;
-}
-.col-lg-4 {
-  text-align: center;
-}
-#drugi {
-  background-color: #141414;
-}
+
+
+
+
+
+
+/*Intro*/
 #particles-js {
   position: absolute;
   width: 100%;
@@ -47,13 +45,13 @@ p {
   top: 0%;
 }
 .btn-outline-cyan {
-    color: #00ffff;
-    border-color: #00ffff;
+  color: #00ffff;
+  border-color: #00ffff;
 }
 .btn-outline-cyan:hover {
-    color: #d8d8d8;
-    background-color: #00ffff;
-    border-color: #00ffff;
+  color: #d8d8d8;
+  background-color: #00ffff;
+  border-color: #00ffff;
 }
 .btn-cyan:active {
   box-shadow: none;
@@ -61,17 +59,17 @@ p {
   background-color: transparent;
 }
 .btn-outline-orange {
-    color: #ff6600;
-    border-color: #ff6600;
+  color: #ff8000;
+  border-color: #ff8000;
 }
 .btn-outline-orange:hover {
-    color: #d8d8d8;
-    background-color: #ff6600;
-    border-color: #ff6600;
+  color: #d8d8d8;
+  background-color: #ff8000;
+  border-color: #ff8000;
 }
 .btn-orange:active {
   box-shadow: none;
-  color: #ff6600;
+  color: #ff8000;
   background-color: transparent;
 }
 .zoomIn {
@@ -89,3 +87,93 @@ p {
 .animated.delay-4s {
   animation-delay: 2s;
 }
+.title {
+  font-size: 7rem;
+  margin: 3% 0 0 0;
+  float: left;
+}
+.sub-title {
+  font-size: 7rem;
+  float: left;
+}
+.row {
+  margin-right: -1%;
+  margin-left: -1%;
+}
+.intromarginbtn {
+  margin-top: 65%;
+}
+.intromargin {
+  margin-top: 75%;
+}
+/*Oba*/
+.sidecontent {
+  position: absolute;
+  height: 100%;
+  padding: 2% 1%;
+  background-color: rgba(10,10,10,0.95);
+}
+/*Lewa*/
+#aboutme {
+  visibility: hidden;
+  z-index: 2;
+  top: 0;
+  left: 0;
+}
+/*Prawa*/
+#skills {
+  visibility: hidden;
+  z-index: 2;
+  top: 0;
+  left: 50%;
+}
+
+
+
+
+
+
+/*Portfolio*/
+.hrup {
+  background-color: #00ffff;
+}
+.hrdown {
+  background-color: #ff8000;
+}
+article {
+  text-align: left;
+}
+.evenlayout {
+  width: 100%;
+  height: 100%;
+}
+.content {
+  padding: 0 2%;
+}
+
+
+
+
+/*Parzyste*/
+.infoportfolio {
+  margin: 2% 0 0 0;
+}
+.infoimg {
+  margin: 8.5% 0 0 0;
+  width: 100%;
+}
+
+
+
+
+
+/*Nieparzyste*/
+#drugi {
+  background-color: #141414;
+}
+
+
+
+
+
+/*Koniec*/
