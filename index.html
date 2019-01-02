@@ -14,7 +14,7 @@
   </head>
   <body>
     <div id="fullpage">
-      <div id="pierwszy" class="section container-fluid" >
+      <div class="section container-fluid" >
         <div id="aboutme" class="sidecontent col-lg-6">
           <h2>O mnie</h2>
           <hr class="hrup hrdetailed"></hr>
@@ -31,25 +31,18 @@
             <a href="mailto:Emil.Szymon.Pawlak@gmail.com"><h3>Napisz do mnie!</h3></a>
           </address>
           <hr class="hrup hrdetailed" style="width: 25%;"></hr>
-          <button type="button" name="button" style="padding: 0; border: 0;" onclick="hideaboutme()">test<i class="fas fa-chevron-left aboutbtn"></i></button>
+          <div class="col-lg-1">
+            <button type="button" name="button" style="padding: 0; border: 0;" onclick="hideaboutme()" class="aboutmebtn"><i class="fas fa-chevron-left aboutbtn"></i></button>
+          </div>
         </div>
         <div id="skills" class="sidecontent col-lg-6">
-          <button type="button" name="button" class="btn btn-outline-orange btn-orange" style="float: left;">Front-End</button>
-          <button type="button" name="button" class="btn btn-outline-off btn-off" style="float: right;">Back-End</button>
+          <button type="button" name="button" onclick="showfrontend()" class="btn btn-outline-orange btn-orange" style="float: left;">Front-End</button>
+          <button type="button" name="button" onclick="showbackend()" class="btn btn-outline-off btn-off" style="float: right;">Back-End</button>
           <hr class="hrdown hrdetailed" style="margin-top: 10%;">
-          <div class="container skills-table" style="padding: 1%;">
+          <div id="frontend" class="container skills-table" style="padding: 1%;">
             <div class="row">
-              <div class="col-lg-3">
-                <p>Ekspert</p>
-              </div>
-              <div class="col-lg-3">
-                <p>Zaawansowany</p>
-              </div>
-              <div class="col-lg-3">
-                <p>Średniozaawansowany</p>
-              </div>
-              <div class="col-lg-3">
-                <p>Podstawowy</p>
+              <div class="col-lg-12">
+                <p>Języki</p>
               </div>
             </div>
             <div class="row progressbar">
@@ -63,16 +56,65 @@
               </div>
             </div>
             <div class="row progressbar">
-              <div class="col-lg-6"></div>
-              <div class="col-lg-6 table">
-                JS
+              <div class="col-lg-12 table">
+                JavaScript
               </div>
             </div>
+            <hr class="hrdown hrdetailed">
+            <div class="col-lg-12">
+              <p>Frameworki</p>
+            </div>
+            <div class="row progressbar">
+              <div class="col-lg-12 table">
+                BootStrap
+              </div>
+            </div>
+            <hr class="hrdown hrdetailed">
+            <div class="col-lg-12">
+              <p>Dodatkowe</p>
+            </div>
+            <div class="row progressbar">
+              <div class="col-lg-12 table">
+                JQuery
+              </div>
+            </div>
+            <div class="row progressbar">
+              <div class="col-lg-12 table">
+                WordPress
+              </div>
+              <hr class="hrdown hrdetailed">
+            </div>
           </div>
-          <hr class="hrdown hrdetailed">
-          <button type="button" name="button" style="padding: 0; border: 0;" onclick="hideskills()"><i class="fas fa-chevron-right skillsbtn"></i></button>
+          <div id="backend" class="container skills-table" style="padding: 1%;">
+            <div class="row">
+              <div class="col-lg-12">
+                <p>Języki</p>
+              </div>
+            </div>
+            <div class="row progressbar">
+              <div class="col-lg-12 table">
+                PHP
+              </div>
+            </div>
+            <div class="row progressbar">
+              <div class="col-lg-12 table">
+                SQL
+              </div>
+            </div>
+            <hr class="hrdown hrdetailed">
+            <div class="col-lg-12">
+              <p>Dodatkowe</p>
+            </div>
+            <div class="row progressbar">
+              <div class="col-lg-12 table">
+                Node.JS
+              </div>
+            </div>
+            <hr class="hrdown hrdetailed">
+          </div>
+          <button type="button" name="button" style="padding: 0; border: 0;" onclick="hideskills()" class="skillsbtn"><i class="fas fa-chevron-right"></i></button>
         </div>
-        <div class="slide active">
+        <div id=homepage class="slide active">
           <div class="row">
             <div id="particles-js"></div>
             <div class="col-lg-1"></div>
@@ -103,7 +145,7 @@
         </div>
       </div>
 
-      <div id="drugi" class="section container-fluid">
+      <div class="section container-fluid">
         <div class="row evenlayout">
           <div class="col-lg-8 infoimg">
             <img src="imgs/ratujezycie.gif" alt="ratujezycie">
@@ -120,7 +162,7 @@
           </div>
         </div>
       </div>
-      <div id="trzeci" class="section">
+      <div class="section">
         <div class="row">
           <div style="margin-top:10%; width: 100%;">
             <hr class="hrup" style="width: 7.5%;"></hr>

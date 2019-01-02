@@ -50,6 +50,7 @@ button:focus {
 .btn-off:active {
   box-shadow: none;
   color: #727272;
+  border-color: #727272;
   background-color: transparent;
 }
 
@@ -75,7 +76,8 @@ button:focus {
 }
 .btn-cyan:active {
   box-shadow: none;
-  color: #00ffff;
+  color: #00ffff;;
+  border-color: #00ffff;
   background-color: transparent;
 }
 .btn-outline-orange {
@@ -90,6 +92,7 @@ button:focus {
 .btn-orange:active {
   box-shadow: none;
   color: #ff8000;
+  border-color: #ff8000;
   background-color: transparent;
 }
 .zoomIn {
@@ -163,6 +166,14 @@ a:hover {
 .aboutbtn:hover {
   cursor: pointer;
 }
+.aboutmebtn {
+  margin: 100% 0 0 0;
+}
+
+
+
+
+
 /*Prawa*/
 #skills {
   visibility: hidden;
@@ -170,11 +181,19 @@ a:hover {
   top: 0;
   left: 50%;
 }
+#backend {
+  visibility: hidden;
+  z-index: 3;
+}
+#frontend {
+    position: absolute;
+}
 .skillsbtn {
   color: #ff8000;
   font-size: 5rem;
   background-color: transparent;
-  margin: 100% 0 0 0;
+  margin: 35% 0 0 93%;
+  float:
 }
 .skillsbtn:hover {
   cursor: pointer;
