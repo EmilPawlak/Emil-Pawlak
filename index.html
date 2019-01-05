@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
     <link rel="stylesheet" href="style.css">
   </head>
-  <body>
+  <body class="noSelect">
     <div id="fullpage">
       <div class="section container-fluid" >
         <div id="aboutme" class="sidecontent col-lg-6">
@@ -20,11 +20,11 @@
           <hr class="hrup hrdetailed"></hr>
           <article>
             <p class="pstyling" style="text-indent: 0; text-align: center;">Nazywam się Emil Pawlak i zajmuję się Web Developmentem.</p>
-            <p class="pstyling indent">Współpracowałem zarówno z wieloma firmami jak i z osobami prywatnymi. Projektuję i tworzę responsywne, szybkie, nowoczesne strony internetowe oraz aplikacje. Posiadam obszerną wiedzę dotyczącą Front-endu oraz rozwijam ją w stronę Back-endu. Ciągle utrzymuję się z najnowszymi nowinkami technicznymi.</p>
+            <p class="pstyling indent">Współpracowałem zarówno z wieloma firmami jak i z osobami prywatnymi. Projektuję i tworzę responsywne, szybkie i nowoczesne strony internetowe oraz aplikacje. Posiadam obszerną wiedzę dotyczącą Front-endu oraz rozwijam ją w stronę Back-endu. Ciągle utrzymuję się z najnowszymi nowinkami technicznymi.</p>
             <p class="pstyling indent">Uwielbiam psy i dobre jedzenie.</p>
           </article>
            <address>
-             <a href="https://github.com/EmilPawlak"><h3>Odwiedź mojego GitHuba</h3></a>
+             <a href="https://github.com/EmilPawlak"><h3 style="margin: 25% 0 0 0;">Odwiedź mojego GitHuba</h3></a>
            </address>
           <hr class="hrup hrdetailed" style="width: 40%;"></hr>
           <address class="">
@@ -36,8 +36,8 @@
           </div>
         </div>
         <div id="skills" class="sidecontent col-lg-6">
-          <button type="button" name="button" onclick="showfrontend()" class="btn btn-outline-orange btn-orange" style="float: left;">Front-End</button>
-          <button type="button" name="button" onclick="showbackend()" class="btn btn-outline-off btn-off" style="float: right;">Back-End</button>
+          <button id="frontEndBtn" type="button" name="button" onclick="showfrontend()" class="btn btn-outline-orange btn-orange" style="float: left;">Front-End</button>
+          <button id="backEndBtn" type="button" name="button" onclick="showbackend()" class="btn btn-outline-off btn-off" style="float: right;">Back-End</button>
           <hr class="hrdown hrdetailed" style="margin-top: 10%;">
           <div id="frontend" class="container skills-table" style="padding: 1%;">
             <div class="row">
@@ -115,48 +115,44 @@
           <button type="button" name="button" style="padding: 0; border: 0;" onclick="hideskills()" class="skillsbtn"><i class="fas fa-chevron-right"></i></button>
         </div>
         <div id=homepage class="slide active">
-          <div class="row">
-            <div id="particles-js"></div>
-            <div class="col-lg-1"></div>
-            <div class="col-lg-6 title">
-              <p class="title animated zoomIn">Hej!&nbsp</p><p class="title animated bounceInUp delay-1s">Tu&nbsp</p><p style="font-family: 'Kaushan Script'; color:#00ffff;" class="animated bounceInDown delay-1s title">Emil</p></p>
+          <div id="closer" onclick="closeall()">
+            <div class="row">
+              <div id="particles-js"></div>
+              <div class="col-lg-1"></div>
+              <div class="col-lg-6 title">
+                <p class="title animated zoomIn">Hej!&nbsp</p><p class="title animated bounceInUp delay-1s">Tu&nbsp</p><p style="font-family: 'Kaushan Script'; color:#00ffff;" class="animated bounceInDown delay-1s title">Emil</p></p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-3"></div>
+              <div class="col-lg-7">
+                <p class="sub-title animated zoomIn delay-2s">Web</p>
+                <p class="sub-title animated zoomIn delay-3s">&nbspDeveloper&nbsp</p>
+                <span style="color:#ff8000;" class="sub-title animated bounceInUp delay-4s">;</span>
+                <span style="color:#ff6600;" class="sub-title animated bounceInDown delay-4s">)</span></p>
+              </div>
             </div>
           </div>
           <div class="row">
-            <div class="col-lg-3"></div>
-            <div class="col-lg-7">
-              <p class="sub-title animated zoomIn delay-2s">Web</p>
-              <p class="sub-title animated zoomIn delay-3s">&nbspDeveloper&nbsp</p>
-              <span style="color:#ff8000;" class="sub-title animated bounceInUp delay-4s">;</span>
-              <span style="color:#ff6600;" class="sub-title animated bounceInDown delay-4s">)</span></p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-4">
-              <button type="button" onclick="showaboutme()" class="intromarginbtn btn btn-outline-cyan btn-cyan">O mnie</button>
-            </div>
-            <div class="col-lg-4">
-              <p class="intromargin"style="font-size: 2rem;"><i class="fas fa-caret-down" style="color: #00ffff; text-align: center;"></i> Portfolio <i class="fas fa-caret-down" style="color: #ff8000;"></i></p>
-            </div>
-            <div class="col-lg-4">
-              <button type="button" onclick="showskills()" class="intromarginbtn btn btn-outline-orange btn-orange">Umiejętności</button>
-            </div>
+              <button type="button" onclick="showaboutme()" class="intromarginbtn btn btn-outline-cyan btn-cyan displayAboutMe leftbutton">O mnie</button>
+              <p class="intromargin"style="font-size: 2rem;"><i class="fas fa-caret-down middlebutton" style="color: #00ffff; text-align: center;"></i> Portfolio <i class="fas fa-caret-down" style="color: #ff8000;"></i></p>
+              <button id="skillsBtn" type="button" onclick="showskills()" class="intromarginbtn btn btn-outline-orange btn-orange rightbutton">Umiejętności</button>
           </div>
         </div>
       </div>
 
-      <div class="section container-fluid">
+      <div id="odd" class="section container-fluid">
         <div class="row evenlayout">
           <div class="col-lg-8 infoimg">
-            <img src="imgs/ratujezycie.gif" alt="ratujezycie">
+            <a href="http://www.ratujezycie.pl/"><img src="imgs/ratujezycie.gif" alt="ratujezycie"></a>
           </div>
           <div class="col-lg-4 infoportfolio">
             <h2>Ratuje Życie</h2>
             <hr class="hrup hrdetailed">
               <article class="paragraphportfolio indent">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel ultricies tellus. Donec vehicula ornare libero eget posuere. Maecenas metus sapien, lacinia eget lacus vel, faucibus malesuada risus. Nulla sed vulputate diam. Vestibulum elit ex, tristique in egestas et, rutrum at erat. Proin in odio neque. Sed maximus egestas purus, id commodo lorem suscipit vel. In iaculis commodo elementum. Suspendisse venenatis augue non quam pretium, vel maximus ante mattis. Maecenas at urna sapien. Praesent lacus lacus, auctor ut nisl ac, imperdiet porta ex. Ut varius nisl nisl. Sed rutrum arcu nec lectus malesuada, eu fringilla tortor aliquet. Proin non mattis sem. Praesent tortor sapien, cursus sit amet consectetur in, dapibus ac neque.
-                Etiam sed dui nec sem mollis laoreet id et metus. Cras finibus facilisis congue. Vestibulum pellentesque aliquet lacus, a elementum nibh sodales ut. Ut bibendum dignissim orci dapibus iaculis. Cras a nibh semper, fermentum sem vitae, commodo eros. Integer tincidunt feugiat lectus, ac cursus erat cursus sit amet. Etiam ut metus gravida mauris laoreet tincidunt at a metus.
-                Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut malesuada et nibh ut aliquam. Etiam quam purus, gravida et pharetra eu, ornare vitae quam. Suspendisse purus quam, rutrum ac diam eget, gravida bibendum eros. Praesent interdum sapien sit amet leo malesuada volutpat. Vivamus vitae tempor turpis, eu venenatis quam. Aliquam ligula nulla, luctus sed mi ut, pulvinar scelerisque nibh. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus eu mollis eros, sit amet tempor elit. Nunc risus est, maximus sed auctor a, pellentesque ut felis. Suspendisse sodales eros ac massa ornare, nec dignissim leo vulputate. Maecenas ultricies risus a mauris venenatis, in mollis massa laoreet. In felis ligula, rhoncus at eros id, ullamcorper mattis purus. Phasellus in ipsum vulputate ante dictum imperdiet nec sed dolor.
+                <p>
+                  Był to jeden z moich pierwszych dużych projektów. Zacząłem go z myślą, by stworzyć coś przydatnego innym. Dodatkowo chciałem polepszyć swoje podstawy, więc wyznaczyłem sobie wyzwanie, aby używać tylko trio HTML, CSS oraz JS. Strona zawiera kroki i informacje jak pomóc w pewnych kryzysowych sytuacjach. Od prostych krwawień, poprzez duszności aż po poparzenia, dla ludzi i zwierząt. Informacje były zbierane z sieci oraz opisywane i interpretowane przeze mnie, gdyż były one często bardzo sprzeczne ze sobą. Strona posiada dwa tryby, jeden jest do prostego uzupełnienia wiedzy, a drugi do szybkiego dostarczenia informacji, który musiałem wykreować w taki sposób, by dotarcie do nich było proste, gdyż osoba, która ich szuka, może być w jednej z takich kryzysowych sytuacji. Dlatego dodałem proste drzewka pytań i odpowiedzi wraz ze zdjęciami w tle, które mogą pomóc w szybszym kojarzeniu wyborów. Całościowo jestem bardzo zadowolony z całego projektu, pozwolił mi on załatać dziury w podstawach, z którymi mierzyłem się od jakiegoś czasu oraz pomógł mi lepiej rozplanowywać nie tylko same UE i UI, lecz również sam kod.
+                </p>
               </article>
             <hr class="hrdown hrdetailed"><hr>
           </div>

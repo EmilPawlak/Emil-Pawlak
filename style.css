@@ -15,7 +15,7 @@ h2 {
 }
 h3 {
   text-align: center;
-  margin: 10% 0 0 0;
+  margin: 5% 0 0 0;
 }
 body {
   font-family: Montserrat;
@@ -52,6 +52,14 @@ button:focus {
   color: #727272;
   border-color: #727272;
   background-color: transparent;
+}
+.noSelect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 
@@ -117,19 +125,28 @@ button:focus {
 }
 .sub-title {
   font-size: 7rem;
+  margin: 0 0 45% 0;
   float: left;
 }
 .row {
   margin-right: -1%;
   margin-left: -1%;
 }
-.intromarginbtn {
-  margin-top: 65%;
+.leftbutton {
+  position: absolute;
+  top: 87%;
+  left: 10%;
 }
 .intromargin {
-  margin-top: 75%;
+  position: absolute;
+  top: 92%;
+  left: 45%;
 }
-/*Oba*/
+.rightbutton {
+  position: absolute;
+  top: 87%;
+  left: 78%;
+}
 .sidecontent {
   position: absolute;
   height: 100%;
@@ -167,7 +184,7 @@ a:hover {
   cursor: pointer;
 }
 .aboutmebtn {
-  margin: 100% 0 0 0;
+  margin: -90% 0 0 0;
 }
 
 
@@ -244,16 +261,14 @@ article {
   margin: 2% 0 0 0;
 }
 .infoimg {
-  margin: 8.5% 0 0 0;
+  margin: 7% 0 0 0;
   width: 100%;
 }
 
 
 
-
-
 /*Nieparzyste*/
-#drugi {
+#odd {
   background-color: #141414;
 }
 
