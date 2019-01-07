@@ -54,17 +54,13 @@ button:focus {
   background-color: transparent;
 }
 .noSelect {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
-
-
-
-
 
 /*Intro*/
 #particles-js {
@@ -137,10 +133,11 @@ button:focus {
   top: 87%;
   left: 10%;
 }
-.intromargin {
+.portfoliosign {
   position: absolute;
   top: 92%;
   left: 45%;
+  font-size: 2rem;
 }
 .rightbutton {
   position: absolute;
@@ -153,6 +150,7 @@ button:focus {
   padding: 2% 1%;
   background-color: rgba(10,10,10,0.95);
 }
+
 /*Lewa*/
 #aboutme {
   visibility: hidden;
@@ -172,13 +170,13 @@ a:hover {
 }
 .pstyling {
   margin-top: 5%;
-  font-size: 1.25rem;
+  font-size: 1.75rem;
 }
 .aboutbtn {
   color: #00ffff;
   font-size: 5rem;
   background-color: transparent;
-  margin: 100% 0 0 0;
+  margin: 40% 0 0 0;
 }
 .aboutbtn:hover {
   cursor: pointer;
@@ -186,10 +184,15 @@ a:hover {
 .aboutmebtn {
   margin: -90% 0 0 0;
 }
-
-
-
-
+.linksmargin {
+  margin: 5% 0 0 0;
+}
+.hrgithub {
+  width: 40%;
+}
+.hremail {
+  width: 25%;
+}
 
 /*Prawa*/
 #skills {
@@ -210,7 +213,6 @@ a:hover {
   font-size: 5rem;
   background-color: transparent;
   margin: 35% 0 0 93%;
-  float:
 }
 .skillsbtn:hover {
   cursor: pointer;
@@ -230,10 +232,9 @@ a:hover {
   font-size: 2rem;
   text-align: left;
 }
-
-
-
-
+.hrAbvSkills {
+  margin-top: 10%;
+}
 
 /*Portfolio*/
 .hrup {
@@ -253,9 +254,6 @@ article {
   padding: 0 2%;
 }
 
-
-
-
 /*Parzyste*/
 .infoportfolio {
   margin: 2% 0 0 0;
@@ -265,15 +263,668 @@ article {
   width: 100%;
 }
 
-
-
 /*Nieparzyste*/
 #odd {
   background-color: #141414;
 }
 
-
-
-
-
 /*Koniec*/
+.finish {
+  text-align: center;
+  font-size: 3rem;
+  width: 100%;
+  color: #00ffff;
+  margin: 0;
+  text-indent: 0;
+}
+.finishHrup {
+  width: 25%;
+}
+.finishHrdown {
+  width: 30%;
+}
+@media (min-width: 0px) and (max-width: 349px){
+  /*Wszystko*/
+  .pstyling {
+    font-size: 0.8rem;
+  }
+  button {
+    font-size: 1px;
+  }
+  .sidecontent {
+    padding: 2% 3%;
+  }
+  p {
+    margin-bottom: 0.5rem;
+    font-size: 0.5rem;
+  }
+
+  /*Intro*/
+  .title{
+    font-size: 1.5rem;
+  }
+  .sub-title{
+    font-size: 1.5rem;
+  }
+  .btn {
+    font-size: 1rem;
+  }
+  .leftbutton {
+    top: 78%;
+    left: 36%;
+  }
+  .rightbutton {
+    left: 29%;
+    top: 86%;
+  }
+  .portfoliosign {
+    font-size: 1.5rem;
+    top: 93%;
+    left: 27%;
+  }
+  /*Lewa*/
+  h3 {
+    font-size: 1rem;
+  }
+  .hrgithub {
+    width: 60%;
+  }
+  .hremail {
+    width: 40%;
+  }
+  .linksmargin {
+    margin: 10% 0 0 0;
+  }
+  .aboutbtn {
+    font-size: 4rem;
+    float: left;
+    margin: 10% 0 0 -5%;
+  }
+
+  /*Prawa*/
+  #skills {
+    left: 0;
+  }
+  .progressbar {
+    font-size: 1rem;
+  }
+  .hrAbvSkills {
+    margin-top: 15%;
+  }
+  .skillsbtn {
+    font-size: 4rem;
+    margin: 64% 0 0 88%;
+  }
+  .table {
+    margin-bottom: 0.5rem;
+  }
+  /*Portfolio*/
+  /*Parzyste*/
+  h2 {
+    font-size: 2rem;
+  }
+  /*Nieparzyste*/
+  /*Koniec*/
+  .finishHrup {
+    width: 60%;
+  }
+  .finish {
+  font-size: 1.5rem;
+  }
+  .finishHrdown {
+    width: 90%;
+  }
+}
+
+@media (min-width: 350px) and (max-width: 400px){
+  /*Wszystko*/
+  .pstyling {
+    font-size: 1rem;
+  }
+  button {
+    font-size: 1px;
+  }
+  .sidecontent {
+    padding: 2% 3%;
+  }
+  p {
+    margin-bottom: 0.5rem;
+    font-size: 0.60rem;
+  }
+
+  /*Intro*/
+  .title{
+    font-size: 1.7rem;
+  }
+  .sub-title{
+    font-size: 1.7rem;
+  }
+  .btn {
+    font-size: 1rem;
+  }
+  .leftbutton {
+    top: 80%;
+    left: 36%;
+  }
+  .rightbutton {
+    left: 29%;
+    top: 88%;
+  }
+  .portfoliosign {
+    font-size: 1.5rem;
+    top: 94%;
+    left: 27%;
+  }
+  /*Lewa*/
+  h3 {
+    font-size: 1rem;
+  }
+  .hrgithub {
+    width: 60%;
+  }
+  .hremail {
+    width: 40%;
+  }
+  .linksmargin {
+    margin: 10% 0 0 0;
+  }
+  .aboutbtn {
+    font-size: 4rem;
+    float: left;
+    margin: 18% 0 0 -5%;
+  }
+
+  /*Prawa*/
+  #skills {
+    left: 0;
+  }
+  .progressbar {
+    font-size: 2rem;
+  }
+  .hrAbvSkills {
+    margin-top: 15%;
+  }
+  .skillsbtn {
+    font-size: 4rem;
+    margin: 60% 0 0 88%;
+  }
+  .table {
+    margin-bottom: 0.5rem;
+  }
+  /*Portfolio*/
+  /*Parzyste*/
+  h2 {
+    font-size: 2rem;
+  }
+  /*Nieparzyste*/
+  /*Koniec*/
+  .finishHrup {
+    width: 60%;
+  }
+  .finish {
+  font-size: 1.5rem;
+  }
+  .finishHrdown {
+    width: 80%;
+  }
+}
+
+@media (min-width: 401px) and (max-width: 700px){
+  /*Wszystko*/
+  .pstyling {
+    font-size: 1rem;
+  }
+  button {
+    font-size: 1px;
+  }
+  .sidecontent {
+    padding: 2% 3%;
+  }
+  p {
+    margin-bottom: 0.5rem;
+    font-size: 0.7rem;
+  }
+
+  /*Intro*/
+  .title{
+    font-size: 2rem;
+  }
+  .sub-title{
+    font-size: 2rem;
+  }
+  .btn {
+    font-size: 1rem;
+  }
+  .leftbutton {
+    top: 80%;
+    left: 38%;
+  }
+  .rightbutton {
+    left: 32%;
+    top: 88%;
+  }
+  .portfoliosign {
+    font-size: 1.5rem;
+    top: 94%;
+    left: 30%;
+  }
+  /*Lewa*/
+  h3 {
+    font-size: 1rem;
+  }
+  .hrgithub {
+    width: 60%;
+  }
+  .hremail {
+    width: 40%;
+  }
+  .linksmargin {
+    margin: 10% 0 0 0;
+  }
+  .aboutbtn {
+    font-size: 4rem;
+    float: left;
+    margin: 35% 0 0 -5%;
+  }
+  /*Prawa*/
+  #skills {
+    left: 0;
+  }
+  .progressbar {
+    font-size: 2rem;
+  }
+  .hrAbvSkills {
+    margin-top: 15%;
+  }
+  .skillsbtn {
+    font-size: 4rem;
+    margin: 62% 0 0 91%;
+  }
+  .table {
+    margin-bottom: 1rem;
+  }
+  /*Portfolio*/
+  /*Parzyste*/
+  h2 {
+    font-size: 2rem;
+  }
+  /*Nieparzyste*/
+  /*Koniec*/
+  .finishHrup {
+    width: 50%;
+  }
+  .finish {
+  font-size: 1.5rem;
+  }
+  .finishHrdown {
+    width: 70%;
+  }
+}
+  @media (min-width: 701px) and (max-width: 1023px){
+    /*Wszystko*/
+    .pstyling {
+      font-size: 1.5rem;
+    }
+    button {
+      font-size: 1px;
+    }
+    .sidecontent {
+      padding: 2% 3%;
+    }
+    p {
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+
+    /*Intro*/
+    .title{
+      font-size: 4rem;
+    }
+    .sub-title{
+      font-size: 4rem;
+    }
+    .btn {
+      font-size: 2rem;
+    }
+    .leftbutton {
+      top: 90%;
+      left: 8%;
+    }
+    .rightbutton {
+      left: 67%;
+      top: 90%;
+    }
+    .portfoliosign {
+      font-size: 2rem;
+      top: 94%;
+      left: 38%;
+    }
+    /*Lewa*/
+    h3 {
+      font-size: 2rem;
+    }
+    .hrgithub {
+      width: 65%;
+    }
+    .hremail {
+      width: 40%;
+    }
+    .linksmargin {
+      margin: 10% 0 0 0;
+    }
+    .aboutbtn {
+      font-size: 7rem;
+      float: left;
+      margin: 15% 0 0 -2%;
+    }
+    /*Prawa*/
+    #skills {
+      left: 0;
+    }
+    .progressbar {
+      font-size: 2rem;
+    }
+    .hrAbvSkills {
+      margin-top: 15%;
+    }
+    .skillsbtn {
+      font-size: 8rem;
+      margin: 43% 0 0 90%;
+    }
+    .table {
+      margin-bottom: 2rem;
+    }
+    /*Portfolio*/
+    /*Parzyste*/
+    h2 {
+      font-size: 3rem;
+    }
+    /*Nieparzyste*/
+    /*Koniec*/
+    .finishHrup {
+      width: 60%;
+    }
+    .finish {
+    font-size: 3rem;
+    }
+    .finishHrdown {
+      width: 80%;
+    }
+  }
+  @media (min-width: 1024px) and (max-width: 1200px){
+    /*Wszystko*/
+    .pstyling {
+      font-size: 2rem;
+    }
+    button {
+      font-size: 1px;
+    }
+    .sidecontent {
+      padding: 2% 3%;
+    }
+    p {
+      margin-bottom: 0.5rem;
+      font-size: 1.5rem;
+    }
+
+    /*Intro*/
+    .title{
+      font-size: 6rem;
+    }
+    .sub-title{
+      font-size: 6rem;
+    }
+    .btn {
+      font-size: 2.75rem;
+    }
+    .leftbutton {
+      top: 90%;
+      left: 10%;
+    }
+    .rightbutton {
+      left: 67%;
+      top: 90%;
+    }
+    .portfoliosign {
+      font-size: 2.75rem;
+      top: 94%;
+      left: 38%;
+    }
+    /*Lewa*/
+    h3 {
+      font-size: 3rem;
+    }
+    .hrgithub {
+      width: 65%;
+    }
+    .hremail {
+      width: 40%;
+    }
+    .linksmargin {
+      margin: 10% 0 0 0;
+    }
+    .aboutbtn {
+      font-size: 8rem;
+      float: left;
+      margin: 150% 0 0 -10%;
+    }
+    /*Prawa*/
+    #skills {
+      left: 0;
+    }
+    .progressbar {
+      font-size: 3rem;
+    }
+    .hrAbvSkills {
+      margin-top: 15%;
+    }
+    .skillsbtn {
+      font-size: 8rem;
+      margin: 52% 0 0 93%;
+    }
+    .table {
+      margin-bottom: 2rem;
+    }
+    /*Portfolio*/
+    /*Parzyste*/
+    h2 {
+      font-size: 4rem;
+    }
+    /*Nieparzyste*/
+    /*Koniec*/
+    .finishHrup {
+      width: 40%;
+    }
+    .finish {
+    font-size: 3rem;
+    }
+    .finishHrdown {
+      width: 65%;
+    }
+  }
+  @media (min-width: 1201px) and (max-width: 1300px){
+    /*Wszystko*/
+    .pstyling {
+      font-size: 1.25rem;
+    }
+    button {
+      font-size: 1px;
+    }
+    .sidecontent {
+      padding: 2% 3%;
+    }
+    p {
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+    .infoimg {
+      margin: 15% 0 0 0;
+    }
+    /*Intro*/
+    .title{
+      font-size: 5rem;
+    }
+    .sub-title{
+      font-size: 5rem;
+    }
+    .btn {
+      font-size: 2rem;
+    }
+    .leftbutton {
+      top: 87.5%;
+      left: 15%;
+    }
+    .rightbutton {
+      left: 70%;
+      top: 87.5%;
+    }
+    .portfoliosign {
+      font-size: 2rem;
+      top: 92.5%;
+      left: 42%;
+    }
+    /*Lewa*/
+    h3 {
+      font-size: 2rem;
+    }
+    .hrgithub {
+      width: 65%;
+    }
+    .hremail {
+      width: 40%;
+    }
+    .linksmargin {
+      margin: 10% 0 0 0;
+    }
+    .aboutbtn {
+      font-size: 6rem;
+      float: left;
+      margin: 10% 0 0 -50%;
+    }
+    /*Prawa*/
+    #skills {
+      left: 50%;
+    }
+    .progressbar {
+      font-size: 1.5rem;
+    }
+    .hrAbvSkills {
+      margin-top: 15%;
+    }
+    .skillsbtn {
+      font-size: 6rem;
+      margin: 41% 0 0 94%;
+    }
+    .table {
+      margin-bottom: 1rem;
+    }
+    /*Portfolio*/
+    /*Parzyste*/
+    h2 {
+      font-size: 3rem;
+    }
+    /*Nieparzyste*/
+    /*Koniec*/
+    .finishHrup {
+      width: 35%;
+    }
+    .finish {
+    font-size: 3rem;
+    }
+    .finishHrdown {
+      width: 55%;
+    }
+  }
+  @media (min-width: 1301px) and (max-width: 1500px){
+    /*Wszystko*/
+    .pstyling {
+      font-size: 1.25rem;
+    }
+    button {
+      font-size: 1px;
+    }
+    .sidecontent {
+      padding: 2% 3%;
+    }
+    p {
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+    .infoimg {
+      margin: 15% 0 0 0;
+    }
+    /*Intro*/
+    .title{
+      font-size: 5rem;
+    }
+    .sub-title{
+      font-size: 5rem;
+    }
+    .btn {
+      font-size: 2rem;
+    }
+    .leftbutton {
+      top: 87.5%;
+      left: 15%;
+    }
+    .rightbutton {
+      left: 70%;
+      top: 87.5%;
+    }
+    .portfoliosign {
+      font-size: 2rem;
+      top: 92.5%;
+      left: 42%;
+    }
+    /*Lewa*/
+    h3 {
+      font-size: 2rem;
+    }
+    .hrgithub {
+      width: 65%;
+    }
+    .hremail {
+      width: 40%;
+    }
+    .linksmargin {
+      margin: 10% 0 0 0;
+    }
+    .aboutbtn {
+      font-size: 6rem;
+      float: left;
+      margin: 135% 0 0 -50%;
+    }
+    /*Prawa*/
+    #skills {
+      left: 50%;
+    }
+    .progressbar {
+      font-size: 1.5rem;
+    }
+    .hrAbvSkills {
+      margin-top: 15%;
+    }
+    .skillsbtn {
+      font-size: 6rem;
+      margin: 50% 0 0 95%;
+    }
+    .table {
+      margin-bottom: 1rem;
+    }
+    /*Portfolio*/
+    /*Parzyste*/
+    h2 {
+      font-size: 3rem;
+    }
+    /*Nieparzyste*/
+    /*Koniec*/
+    .finishHrup {
+      width: 35%;
+    }
+    .finish {
+    font-size: 3rem;
+    }
+    .finishHrdown {
+      width: 55%;
+    }
+  }

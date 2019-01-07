@@ -2,8 +2,6 @@ $(document).ready(function() {
 $('#fullpage').fullpage();
 });
 
-
-
 $('.displayAboutMe').click(function(e){
     e.stopPropagation();
     $('#aboutme').show();
@@ -26,17 +24,12 @@ $(document).mouseup(function(e)
     }
 });
 
-
-
-
 function closeall(){
   aboutme.classList.remove("fadeInLeft");
   aboutme.classList.add("fadeOutLeft");
   skills.classList.remove("fadeInRight");
   skills.classList.add("fadeOutRight");
 }
-
-
 
 function showaboutme() {
   aboutme.classList.add("animated", "fadeInLeft");
