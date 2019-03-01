@@ -4,7 +4,9 @@ body {
 }
 a {
   color: inherit;
-} 
+  text-decoration: none;
+  color: #d8d8d8;
+}
 .col-lg-4 {
   text-align: center;
   height: 100%;
