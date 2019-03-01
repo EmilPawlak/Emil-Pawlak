@@ -51,7 +51,8 @@ function hideskills() {
 }
 function showbackend() {
   backend.classList.remove("bounceOutRight");
-  backend.classList.add("animated", "bounceInRight");
+  backend.classList.add("animated");
+  backend.classList.add("bounceInRight");
   backEndBtn.classList.remove("btn-outline-off", "btn-off", "btn-orange:active");
   backEndBtn.classList.add("btn-outline-orange", "btn-outline-orange:hover", "btn-orange:active");
   document.getElementById('backend').style.visibility = "visible";

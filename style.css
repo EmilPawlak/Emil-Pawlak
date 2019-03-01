@@ -1,4 +1,7 @@
 /*Wszystko*/
+body {
+  -ms-font-family: "Montserrat";
+}
 .col-lg-4 {
   text-align: center;
   height: 100%;
@@ -927,4 +930,7 @@ article {
     .finishHrdown {
       width: 55%;
     }
+  }
+  @media (min-width: 1501px) and (max-width: 1700px){
+
   }
