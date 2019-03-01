@@ -50,8 +50,8 @@ function hideskills() {
   skills.classList.add("fadeOutRight");
 }
 function showbackend() {
-  backend.classList.remove("bounceOutRight");
   backend.classList.add("animated");
+  backend.classList.remove("bounceOutRight");
   backend.classList.add("bounceInRight");
   backEndBtn.classList.remove("btn-outline-off", "btn-off", "btn-orange:active");
   backEndBtn.classList.add("btn-outline-orange", "btn-outline-orange:hover", "btn-orange:active");
@@ -59,6 +59,7 @@ function showbackend() {
   frontEndBtn.classList.remove("btn-outline-orange", "btn-orange");
   frontEndBtn.classList.add("btn-outline-off", "btn-off");
   frontend.classList.add("animated", "bounceOutRight");
+  frontend.classList.remove("bounceInRight");
 }
 function showfrontend() {
   backend.classList.remove("bounceInRight");
