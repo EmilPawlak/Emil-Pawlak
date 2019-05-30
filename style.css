@@ -212,12 +212,15 @@ a:hover {
 }
 #frontend {
     position: absolute;
+    width:95%;
+    height: 35vw;
+    overflow-y: scroll;
 }
 .skillsbtn {
   color: #ff8000;
   font-size: 5rem;
   background-color: transparent;
-  margin: 35% 0 0 93%;
+  margin: 27% 0 0 93%;
 }
 .skillsbtn:hover {
   cursor: pointer;
@@ -334,9 +337,15 @@ article {
   }
   .aboutbtn {
     font-size: 4rem;
-    margin: 10% 0 0 -5%;
+    margin: -15% 0 0 -5%;
   }
   /*Prawa*/
+  #frontend {
+      position: absolute;
+      width:95%;
+      height: 100vw;
+      overflow-y: scroll;
+  }
   #skills {
     left: 0;
   }
@@ -348,7 +357,7 @@ article {
   }
   .skillsbtn {
     font-size: 4rem;
-    margin: 64% 0 0 88%;
+    margin: 27% 0 0 87%;
   }
   .table {
     margin-bottom: 0.5rem;
@@ -418,9 +427,15 @@ article {
   }
   .aboutbtn {
     font-size: 4rem;
-    margin: 18% 0 0 -5%;
+    margin: 12% 0 0 -5%;
   }
   /*Prawa*/
+  #frontend {
+      position: absolute;
+      width:95%;
+      height: 130vw;
+      overflow-y: scroll;
+  }
   #skills {
     left: 0;
   }
@@ -429,7 +444,7 @@ article {
   }
   .skillsbtn {
     font-size: 4rem;
-    margin: 60% 0 0 88%;
+    margin: 40% 0 0 90%;
   }
   .table {
     margin-bottom: 0.5rem;
@@ -502,6 +517,12 @@ article {
     margin: 35% 0 0 -5%;
   }
   /*Prawa*/
+  #frontend {
+      position: absolute;
+      width:95%;
+      height: 130vw;
+      overflow-y: scroll;
+  }
   #skills {
     left: 0;
   }
@@ -510,7 +531,7 @@ article {
   }
   .skillsbtn {
     font-size: 4rem;
-    margin: 62% 0 0 91%;
+    margin: 45% 0 0 91%;
   }
   .table {
     margin-bottom: 1rem;
@@ -579,6 +600,12 @@ article {
     margin: 15% 0 0 -2%;
   }
   /*Prawa*/
+  #frontend {
+      position: absolute;
+      width:95%;
+      height: 90vw;
+      overflow-y: scroll;
+  }
   #skills {
     left: 0;
   }
@@ -586,8 +613,8 @@ article {
     margin-top: 15%;
   }
   .skillsbtn {
-    font-size: 8rem;
-    margin: 43% 0 0 90%;
+    font-size: 7rem;
+    margin: 35% 0 0 90%;
   }
   .table {
     margin-bottom: 2rem;
@@ -653,9 +680,15 @@ article {
   }
   .aboutbtn {
     font-size: 8rem;
-    margin: 150% 0 0 -10%;
+    margin: 150% 0 0 -15%;
   }
   /*Prawa*/
+  #frontend {
+      position: absolute;
+      width:95%;
+      height: 90vw;
+      overflow-y: scroll;
+  }
   #skills {
     left: 0;
   }
@@ -667,7 +700,7 @@ article {
   }
   .skillsbtn {
     font-size: 8rem;
-    margin: 52% 0 0 93%;
+    margin: 42% 0 0 93%;
   }
   .table {
     margin-bottom: 2rem;
@@ -703,12 +736,12 @@ article {
     font-size: 5rem;
   }
   .leftbutton {
-    top: 87.5%;
+    top: 85.5%;
     left: 15%;
   }
   .rightbutton {
     left: 70%;
-    top: 87.5%;
+    top: 85.5%;
   }
   .portfoliosign {
     top: 92.5%;
@@ -732,6 +765,12 @@ article {
     margin: 10% 0 0 -50%;
   }
   /*Prawa*/
+  #frontend {
+      position: absolute;
+      width:95%;
+      height: 40vw;
+      overflow-y: scroll;
+  }
   .progressbar {
     font-size: 1.5rem;
   }
@@ -740,7 +779,7 @@ article {
   }
   .skillsbtn {
     font-size: 6rem;
-    margin: 41% 0 0 94%;
+    margin: 32% 0 0 94%;
   }
   .table {
     margin-bottom: 1rem;
@@ -809,6 +848,12 @@ article {
     margin: 135% 0 0 -50%;
   }
   /*Prawa*/
+  #frontend {
+      position: absolute;
+      width:95%;
+      height: 42vw;
+      overflow-y: scroll;
+  }
   .progressbar {
     font-size: 1.5rem;
   }
@@ -817,7 +862,7 @@ article {
   }
   .skillsbtn {
     font-size: 6rem;
-    margin: 50% 0 0 95%;
+    margin: 42% 0 0 95%;
   }
   .table {
     margin-bottom: 1rem;
