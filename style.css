@@ -261,6 +261,18 @@ article {
   padding: 0 2%;
 }
 /*Parzyste*/
+#eveninfo {
+  padding-right: 15px;
+  padding-left: 30px;
+}
+#evenpar {
+  padding-right: 0px;
+  padding-left: 15px;
+}
+#evenimg {
+  padding-right: 0px;
+  padding-left: 0px;
+}
 .infoportfolio {
   margin: 2% 0 0 0;
 }
