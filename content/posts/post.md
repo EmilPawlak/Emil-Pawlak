@@ -7,3 +7,4 @@ title = 'Post'
 ### Test post
 Hello World!
 Testing!
+Test
