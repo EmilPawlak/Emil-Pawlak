@@ -1,13 +1,35 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on My New Hugo Project</title>
-    <link>//localhost:1313/categories/</link>
-    <description>Recent content in Categories on My New Hugo Project</description>
+    <title>Categories on Emil Pawlak</title>
+    <link>http://localhost:1313/categories/</link>
+    <description>Recent content in Categories on Emil Pawlak</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>© 2026 </copyright>
-    <atom:link href="//localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <managingEditor>EmilPawlak@protonmail.com (Emil Pawlak)</managingEditor>
+    <webMaster>EmilPawlak@protonmail.com (Emil Pawlak)</webMaster>
+    
+    <lastBuildDate>Mon, 30 Mar 2026 00:02:04 +0200</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>HTB</title>
+      <link>http://localhost:1313/categories/htb/</link>
+      <pubDate>Mon, 30 Mar 2026 00:02:04 +0200</pubDate>
+      <author>EmilPawlak@protonmail.com (Emil Pawlak)</author>
+      <guid>http://localhost:1313/categories/htb/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>THM</title>
+      <link>http://localhost:1313/categories/thm/</link>
+      <pubDate>Mon, 30 Mar 2026 00:02:04 +0200</pubDate>
+      <author>EmilPawlak@protonmail.com (Emil Pawlak)</author>
+      <guid>http://localhost:1313/categories/thm/</guid>
+      <description></description>
+      
+    </item>
     
   </channel>
 </rss>

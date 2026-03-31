@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Emil Pawlak</title>
+    <link>http://localhost:1313/posts/</link>
+    <description>Recent content in Posts on Emil Pawlak</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>EmilPawlak@protonmail.com (Emil Pawlak)</managingEditor>
+    <webMaster>EmilPawlak@protonmail.com (Emil Pawlak)</webMaster>
+    
+    <lastBuildDate>Mon, 30 Mar 2026 00:02:04 +0200</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Post 1</title>
+      <link>http://localhost:1313/posts/htb/post-1/</link>
+      <pubDate>Mon, 30 Mar 2026 00:02:04 +0200</pubDate>
+      <author>EmilPawlak@protonmail.com (Emil Pawlak)</author>
+      <guid>http://localhost:1313/posts/htb/post-1/</guid>
+      <description>A short description of this HTB write-up.</description>
+      
+    </item>
+    
+    <item>
+      <title>Post 2</title>
+      <link>http://localhost:1313/posts/htb/post-2/</link>
+      <pubDate>Mon, 30 Mar 2026 00:02:04 +0200</pubDate>
+      <author>EmilPawlak@protonmail.com (Emil Pawlak)</author>
+      <guid>http://localhost:1313/posts/htb/post-2/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/htb/post-2/featured.svg" />
+    </item>
+    
+    <item>
+      <title>Post 3</title>
+      <link>http://localhost:1313/posts/htb/post-3/</link>
+      <pubDate>Mon, 30 Mar 2026 00:02:04 +0200</pubDate>
+      <author>EmilPawlak@protonmail.com (Emil Pawlak)</author>
+      <guid>http://localhost:1313/posts/htb/post-3/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/htb/post-3/featured.svg" />
+    </item>
+    
+    <item>
+      <title>Post 4</title>
+      <link>http://localhost:1313/posts/thm/post-4/</link>
+      <pubDate>Mon, 30 Mar 2026 00:02:04 +0200</pubDate>
+      <author>EmilPawlak@protonmail.com (Emil Pawlak)</author>
+      <guid>http://localhost:1313/posts/thm/post-4/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Post 5</title>
+      <link>http://localhost:1313/posts/thm/post-5/</link>
+      <pubDate>Mon, 30 Mar 2026 00:02:04 +0200</pubDate>
+      <author>EmilPawlak@protonmail.com (Emil Pawlak)</author>
+      <guid>http://localhost:1313/posts/thm/post-5/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Post 6</title>
+      <link>http://localhost:1313/posts/thm/post-6/</link>
+      <pubDate>Mon, 30 Mar 2026 00:02:04 +0200</pubDate>
+      <author>EmilPawlak@protonmail.com (Emil Pawlak)</author>
+      <guid>http://localhost:1313/posts/thm/post-6/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>

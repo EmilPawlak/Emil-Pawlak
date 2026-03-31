@@ -1,4 +1,0 @@
-baseURL = 'https://EmilPawlak.github.io/'
-locale = 'en-us'
-title = 'My New Hugo Project'
-theme = "blowfish"

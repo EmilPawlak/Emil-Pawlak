@@ -1,13 +1,45 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on My New Hugo Project</title>
-    <link>//localhost:1313/tags/</link>
-    <description>Recent content in Tags on My New Hugo Project</description>
+    <title>Tags on Emil Pawlak</title>
+    <link>http://localhost:1313/tags/</link>
+    <description>Recent content in Tags on Emil Pawlak</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>© 2026 </copyright>
-    <atom:link href="//localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <managingEditor>EmilPawlak@protonmail.com (Emil Pawlak)</managingEditor>
+    <webMaster>EmilPawlak@protonmail.com (Emil Pawlak)</webMaster>
+    
+    <lastBuildDate>Mon, 30 Mar 2026 00:02:04 +0200</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>HackTheBox</title>
+      <link>http://localhost:1313/tags/hackthebox/</link>
+      <pubDate>Mon, 30 Mar 2026 00:02:04 +0200</pubDate>
+      <author>EmilPawlak@protonmail.com (Emil Pawlak)</author>
+      <guid>http://localhost:1313/tags/hackthebox/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>OSCP</title>
+      <link>http://localhost:1313/tags/oscp/</link>
+      <pubDate>Mon, 30 Mar 2026 00:02:04 +0200</pubDate>
+      <author>EmilPawlak@protonmail.com (Emil Pawlak)</author>
+      <guid>http://localhost:1313/tags/oscp/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Pentesting</title>
+      <link>http://localhost:1313/tags/pentesting/</link>
+      <pubDate>Mon, 30 Mar 2026 00:02:04 +0200</pubDate>
+      <author>EmilPawlak@protonmail.com (Emil Pawlak)</author>
+      <guid>http://localhost:1313/tags/pentesting/</guid>
+      <description></description>
+      
+    </item>
     
   </channel>
 </rss>
