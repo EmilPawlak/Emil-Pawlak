@@ -9,12 +9,32 @@
     <managingEditor>EmilPawlak@protonmail.com (Emil Pawlak)</managingEditor>
     <webMaster>EmilPawlak@protonmail.com (Emil Pawlak)</webMaster>
     
-    <lastBuildDate>Mon, 30 Mar 2026 00:02:04 +0200</lastBuildDate><atom:link href="http://localhost:1313/categories/hackthebox/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 31 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/hackthebox/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Busqueda - HackTheBox</title>
+      <link>http://localhost:1313/posts/htb/busqueda/</link>
+      <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
+      <author>EmilPawlak@protonmail.com (Emil Pawlak)</author>
+      <guid>http://localhost:1313/posts/htb/busqueda/</guid>
+      <description>Busqueda is an Easy Difficulty Linux machine that involves exploiting a command injection vulnerability present in a &lt;code&gt;Python&lt;/code&gt; module. By leveraging this vulnerability, we gain user-level access to the machine. To escalate privileges to &lt;code&gt;root&lt;/code&gt;, we discover credentials within a &lt;code&gt;Git&lt;/code&gt; config file, allowing us to log into a local &lt;code&gt;Gitea&lt;/code&gt; service. Additionally, we uncover that a system checkup script can be executed with &lt;code&gt;root&lt;/code&gt; privileges by a specific user. By utilizing this script, we enumerate &lt;code&gt;Docker&lt;/code&gt; containers that reveal credentials for the &lt;code&gt;administrator&lt;/code&gt; user&amp;amp;amp;#039;s &lt;code&gt;Gitea&lt;/code&gt; account. Further analysis of the system checkup script&amp;amp;amp;#039;s source code in a &lt;code&gt;Git&lt;/code&gt; repository reveals a means to exploit a relative path reference, granting us Remote Code Execution (RCE) with &lt;code&gt;root&lt;/code&gt; privileges.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/htb/busqueda/featured.png" />
+    </item>
+    
+    <item>
+      <title>Craft - HackTheBox</title>
+      <link>http://localhost:1313/posts/htb/craft/</link>
+      <pubDate>Mon, 30 Mar 2026 00:00:00 +0000</pubDate>
+      <author>EmilPawlak@protonmail.com (Emil Pawlak)</author>
+      <guid>http://localhost:1313/posts/htb/craft/</guid>
+      <description>Craft is a medium difficulty Linux box, hosting a Gogs server with a public repository. One of the issues in the repository talks about a broken feature, which calls the eval function on user input. This is exploited to gain a shell on a container, which can query the database containing a user credential. After logging in, the user is found to be using vault to manage the SSH server, and the secret for which is in their Gogs account. This secret is used to create an OTP which can be used to SSH in as root.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/htb/craft/featured.png" />
+    </item>
     
     <item>
       <title>Authority - HackTheBox</title>
       <link>http://localhost:1313/posts/htb/authority/</link>
-      <pubDate>Mon, 30 Mar 2026 00:02:04 +0200</pubDate>
+      <pubDate>Sun, 29 Mar 2026 00:00:00 +0000</pubDate>
       <author>EmilPawlak@protonmail.com (Emil Pawlak)</author>
       <guid>http://localhost:1313/posts/htb/authority/</guid>
       <description>Authority is a medium-difficulty Windows machine that highlights the dangers of misconfigurations, password reuse, storing credentials on shares, and demonstrates how default settings in Active Directory (such as the ability for all domain users to add up to 10 computers to the domain) can be combined with other issues (vulnerable AD CS certificate templates) to take over a domain.</description>
