@@ -12,6 +12,16 @@
     <lastBuildDate>Mon, 30 Mar 2026 00:02:04 +0200</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Authority - HackTheBox</title>
+      <link>http://localhost:1313/posts/htb/authority/</link>
+      <pubDate>Mon, 30 Mar 2026 00:02:04 +0200</pubDate>
+      <author>EmilPawlak@protonmail.com (Emil Pawlak)</author>
+      <guid>http://localhost:1313/posts/htb/authority/</guid>
+      <description>Authority is a medium-difficulty Windows machine that highlights the dangers of misconfigurations, password reuse, storing credentials on shares, and demonstrates how default settings in Active Directory (such as the ability for all domain users to add up to 10 computers to the domain) can be combined with other issues (vulnerable AD CS certificate templates) to take over a domain.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/htb/authority/featured.png" />
+    </item>
+    
+    <item>
       <title>Post 1</title>
       <link>http://localhost:1313/posts/htb/post-1/</link>
       <pubDate>Mon, 30 Mar 2026 00:02:04 +0200</pubDate>
