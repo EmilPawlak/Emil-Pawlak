@@ -58,7 +58,7 @@
                 {{ $squareImage = $authorImage.Crop (printf "%dx%d" $shortSide $shortSide ) }}
               {{ end }}
               <img
-                class="mb-2 h-36 w-36 rounded-full"
+                class="mb-2 h-36 w-36 rounded-full mt-2"
                 width="144"
                 height="144"
                 alt="{{ $.Site.Params.Author.name | default `Author` }}"
@@ -110,12 +110,12 @@
 <section class="max-w-7xl mb-12">
   {{ partial "recent-articles.html" . }}
 </section>
-<section id="about" class="max-w-7xl mb-12">
+<!--<section id="about" class="max-w-7xl mb-12">
   {{ partial "about.html" . }}
 </section>
 <section class="max-w-7xl mb-12">
   {{ partial "contact.html" . }}
-</section>
+</section>-->
 {{ if .Site.Params.homepage.layoutBackgroundBlur | default false }}
   <div
     id="background-blur"
