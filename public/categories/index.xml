@@ -9,12 +9,12 @@
     <managingEditor>EmilPawlak@protonmail.com (Emil Pawlak)</managingEditor>
     <webMaster>EmilPawlak@protonmail.com (Emil Pawlak)</webMaster>
     
-    <lastBuildDate>Tue, 31 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 02 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>HackTheBox</title>
       <link>http://localhost:1313/categories/hackthebox/</link>
-      <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 02 Apr 2026 00:00:00 +0000</pubDate>
       <author>EmilPawlak@protonmail.com (Emil Pawlak)</author>
       <guid>http://localhost:1313/categories/hackthebox/</guid>
       <description></description>
@@ -24,7 +24,7 @@
     <item>
       <title>Pentesting</title>
       <link>http://localhost:1313/categories/pentesting/</link>
-      <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 02 Apr 2026 00:00:00 +0000</pubDate>
       <author>EmilPawlak@protonmail.com (Emil Pawlak)</author>
       <guid>http://localhost:1313/categories/pentesting/</guid>
       <description></description>

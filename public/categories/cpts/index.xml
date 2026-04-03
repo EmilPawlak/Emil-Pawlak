@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CPTS on Emil Pawlak</title>
+    <link>http://localhost:1313/categories/cpts/</link>
+    <description>Recent content in CPTS on Emil Pawlak</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>EmilPawlak@protonmail.com (Emil Pawlak)</managingEditor>
+    <webMaster>EmilPawlak@protonmail.com (Emil Pawlak)</webMaster>
+    
+    <lastBuildDate>Thu, 02 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/cpts/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Authority - HackTheBox</title>
+      <link>http://localhost:1313/posts/htb/authority/</link>
+      <pubDate>Thu, 02 Apr 2026 00:00:00 +0000</pubDate>
+      <author>EmilPawlak@protonmail.com (Emil Pawlak)</author>
+      <guid>http://localhost:1313/posts/htb/authority/</guid>
+      <description>Authority is a medium-difficulty Windows machine that highlights the dangers of misconfigurations, password reuse, storing credentials on shares, and demonstrates how default settings in Active Directory (such as the ability for all domain users to add up to 10 computers to the domain) can be combined with other issues (vulnerable AD CS certificate templates) to take over a domain.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/htb/authority/featured.png" />
+    </item>
+    
+  </channel>
+</rss>

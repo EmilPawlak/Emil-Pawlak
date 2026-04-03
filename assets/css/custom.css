@@ -1,0 +1,22 @@
+/*Making all code blocks look the same*/
+details div pre, div.highlight-wrapper div.highlight pre, div pre, code {
+    background-color: rgba(13, 17, 23, 0.75);
+    color: rgb(203, 213, 225)
+}
+code {
+    font-weight: 400;
+}
+
+/*Adusting margins of different text elements*/
+p {
+    margin: 0.5em 0;
+}
+li {
+    margin: 0;
+}
+ol {
+    margin: 0 0 1em 0.75em;
+}
+.highlight-wrapper {
+    margin: 0 0.5em 0 0
+}

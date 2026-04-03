@@ -9,7 +9,17 @@
     <managingEditor>EmilPawlak@protonmail.com (Emil Pawlak)</managingEditor>
     <webMaster>EmilPawlak@protonmail.com (Emil Pawlak)</webMaster>
     
-    <lastBuildDate>Tue, 31 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 02 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Authority - HackTheBox</title>
+      <link>http://localhost:1313/posts/htb/authority/</link>
+      <pubDate>Thu, 02 Apr 2026 00:00:00 +0000</pubDate>
+      <author>EmilPawlak@protonmail.com (Emil Pawlak)</author>
+      <guid>http://localhost:1313/posts/htb/authority/</guid>
+      <description>Authority is a medium-difficulty Windows machine that highlights the dangers of misconfigurations, password reuse, storing credentials on shares, and demonstrates how default settings in Active Directory (such as the ability for all domain users to add up to 10 computers to the domain) can be combined with other issues (vulnerable AD CS certificate templates) to take over a domain.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/htb/authority/featured.png" />
+    </item>
     
     <item>
       <title>Busqueda - HackTheBox</title>
@@ -29,16 +39,6 @@
       <guid>http://localhost:1313/posts/htb/craft/</guid>
       <description>Craft is a medium difficulty Linux box, hosting a Gogs server with a public repository. One of the issues in the repository talks about a broken feature, which calls the eval function on user input. This is exploited to gain a shell on a container, which can query the database containing a user credential. After logging in, the user is found to be using vault to manage the SSH server, and the secret for which is in their Gogs account. This secret is used to create an OTP which can be used to SSH in as root.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/htb/craft/featured.png" />
-    </item>
-    
-    <item>
-      <title>Authority - HackTheBox</title>
-      <link>http://localhost:1313/posts/htb/authority/</link>
-      <pubDate>Sun, 29 Mar 2026 00:00:00 +0000</pubDate>
-      <author>EmilPawlak@protonmail.com (Emil Pawlak)</author>
-      <guid>http://localhost:1313/posts/htb/authority/</guid>
-      <description>Authority is a medium-difficulty Windows machine that highlights the dangers of misconfigurations, password reuse, storing credentials on shares, and demonstrates how default settings in Active Directory (such as the ability for all domain users to add up to 10 computers to the domain) can be combined with other issues (vulnerable AD CS certificate templates) to take over a domain.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/htb/authority/featured.png" />
     </item>
     
   </channel>
