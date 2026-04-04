@@ -1,5 +1,5 @@
 +++
-date = "2026-03-30"
+date = "2026-04-04"
 draft = false
 title = "Craft - HackTheBox"
 categories = ["Pentesting", "HackTheBox"]
@@ -8,6 +8,9 @@ summary = "Craft is a medium difficulty Linux box, hosting a Gogs server with a 
 +++
 
 ### Summery
+
+
+## Enumeration
 I started my nmap scan with `sudo nmap -sC -sV -O -Pn 10.129.21.109; sleep 5; sudo nmap -p- -Pn 10.129.21.109; sleep 5; sudo nmap -sU -Pn 10.129.21.109`
 
 I accessed the port 6022 and found this info in a simple clear text
