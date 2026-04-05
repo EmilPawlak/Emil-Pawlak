@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>About me on Emil Pawlak</title>
+    <title>Through cybersecurity, one oops at a time on Emil Pawlak</title>
     <link>http://localhost:1313/about/</link>
-    <description>Recent content in About me on Emil Pawlak</description>
+    <description>Recent content in Through cybersecurity, one oops at a time on Emil Pawlak</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <managingEditor>EmilPawlak@protonmail.com (Emil Pawlak)</managingEditor>
     <webMaster>EmilPawlak@protonmail.com (Emil Pawlak)</webMaster>
     
-    <atom:link href="http://localhost:1313/about/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate></lastBuildDate><atom:link href="http://localhost:1313/about/index.xml" rel="self" type="application/rss+xml" />
     
   </channel>
 </rss>

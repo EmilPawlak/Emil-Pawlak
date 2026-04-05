@@ -9,12 +9,22 @@
     <managingEditor>EmilPawlak@protonmail.com (Emil Pawlak)</managingEditor>
     <webMaster>EmilPawlak@protonmail.com (Emil Pawlak)</webMaster>
     
-    <lastBuildDate>Thu, 02 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 04 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>CPTS</title>
+      <link>http://localhost:1313/categories/cpts/</link>
+      <pubDate>Sat, 04 Apr 2026 00:00:00 +0000</pubDate>
+      <author>EmilPawlak@protonmail.com (Emil Pawlak)</author>
+      <guid>http://localhost:1313/categories/cpts/</guid>
+      <description></description>
+      
+    </item>
     
     <item>
       <title>HackTheBox</title>
       <link>http://localhost:1313/categories/hackthebox/</link>
-      <pubDate>Thu, 02 Apr 2026 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 04 Apr 2026 00:00:00 +0000</pubDate>
       <author>EmilPawlak@protonmail.com (Emil Pawlak)</author>
       <guid>http://localhost:1313/categories/hackthebox/</guid>
       <description></description>
@@ -22,11 +32,41 @@
     </item>
     
     <item>
+      <title>Linux</title>
+      <link>http://localhost:1313/categories/linux/</link>
+      <pubDate>Sat, 04 Apr 2026 00:00:00 +0000</pubDate>
+      <author>EmilPawlak@protonmail.com (Emil Pawlak)</author>
+      <guid>http://localhost:1313/categories/linux/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
       <title>Pentesting</title>
       <link>http://localhost:1313/categories/pentesting/</link>
-      <pubDate>Thu, 02 Apr 2026 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 04 Apr 2026 00:00:00 +0000</pubDate>
       <author>EmilPawlak@protonmail.com (Emil Pawlak)</author>
       <guid>http://localhost:1313/categories/pentesting/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>OSCP</title>
+      <link>http://localhost:1313/categories/oscp/</link>
+      <pubDate>Thu, 02 Apr 2026 00:00:00 +0000</pubDate>
+      <author>EmilPawlak@protonmail.com (Emil Pawlak)</author>
+      <guid>http://localhost:1313/categories/oscp/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Windows</title>
+      <link>http://localhost:1313/categories/windows/</link>
+      <pubDate>Thu, 02 Apr 2026 00:00:00 +0000</pubDate>
+      <author>EmilPawlak@protonmail.com (Emil Pawlak)</author>
+      <guid>http://localhost:1313/categories/windows/</guid>
       <description></description>
       
     </item>

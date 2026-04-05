@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "HTB/Authority/index.md",
+                "file": "HTB/Busqueda/index.md",
                 "mode": "source",
                 "source": false
               },
@@ -185,6 +185,8 @@
   },
   "active": "6ee3763bea8352bf",
   "lastOpenFiles": [
+    "HTB/Craft/index.md",
+    "HTB/Authority/index.md",
     "HTB/Authority/featured.png"
   ]
 }

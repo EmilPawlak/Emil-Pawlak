@@ -9,10 +9,20 @@
     <managingEditor>EmilPawlak@protonmail.com (Emil Pawlak)</managingEditor>
     <webMaster>EmilPawlak@protonmail.com (Emil Pawlak)</webMaster>
     
-    <lastBuildDate>Thu, 02 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 04 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Authority - HackTheBox</title>
+      <title>Craft</title>
+      <link>http://localhost:1313/posts/htb/craft/</link>
+      <pubDate>Sat, 04 Apr 2026 00:00:00 +0000</pubDate>
+      <author>EmilPawlak@protonmail.com (Emil Pawlak)</author>
+      <guid>http://localhost:1313/posts/htb/craft/</guid>
+      <description>Craft is a medium difficulty Linux box, hosting a Gogs server with a public repository. One of the issues in the repository talks about a broken feature, which calls the eval function on user input. This is exploited to gain a shell on a container, which can query the database containing a user credential. After logging in, the user is found to be using vault to manage the SSH server, and the secret for which is in their Gogs account. This secret is used to create an OTP which can be used to SSH in as root.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/htb/craft/featured.png" />
+    </item>
+    
+    <item>
+      <title>Authority</title>
       <link>http://localhost:1313/posts/htb/authority/</link>
       <pubDate>Thu, 02 Apr 2026 00:00:00 +0000</pubDate>
       <author>EmilPawlak@protonmail.com (Emil Pawlak)</author>
@@ -22,23 +32,13 @@
     </item>
     
     <item>
-      <title>Busqueda - HackTheBox</title>
+      <title>Busqueda</title>
       <link>http://localhost:1313/posts/htb/busqueda/</link>
       <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
       <author>EmilPawlak@protonmail.com (Emil Pawlak)</author>
       <guid>http://localhost:1313/posts/htb/busqueda/</guid>
       <description>Busqueda is an Easy Difficulty Linux machine that involves exploiting a command injection vulnerability present in a &lt;code&gt;Python&lt;/code&gt; module. By leveraging this vulnerability, we gain user-level access to the machine. To escalate privileges to &lt;code&gt;root&lt;/code&gt;, we discover credentials within a &lt;code&gt;Git&lt;/code&gt; config file, allowing us to log into a local &lt;code&gt;Gitea&lt;/code&gt; service. Additionally, we uncover that a system checkup script can be executed with &lt;code&gt;root&lt;/code&gt; privileges by a specific user. By utilizing this script, we enumerate &lt;code&gt;Docker&lt;/code&gt; containers that reveal credentials for the &lt;code&gt;administrator&lt;/code&gt; user&amp;amp;amp;#039;s &lt;code&gt;Gitea&lt;/code&gt; account. Further analysis of the system checkup script&amp;amp;amp;#039;s source code in a &lt;code&gt;Git&lt;/code&gt; repository reveals a means to exploit a relative path reference, granting us Remote Code Execution (RCE) with &lt;code&gt;root&lt;/code&gt; privileges.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/htb/busqueda/featured.png" />
-    </item>
-    
-    <item>
-      <title>Craft - HackTheBox</title>
-      <link>http://localhost:1313/posts/htb/craft/</link>
-      <pubDate>Mon, 30 Mar 2026 00:00:00 +0000</pubDate>
-      <author>EmilPawlak@protonmail.com (Emil Pawlak)</author>
-      <guid>http://localhost:1313/posts/htb/craft/</guid>
-      <description>Craft is a medium difficulty Linux box, hosting a Gogs server with a public repository. One of the issues in the repository talks about a broken feature, which calls the eval function on user input. This is exploited to gain a shell on a container, which can query the database containing a user credential. After logging in, the user is found to be using vault to manage the SSH server, and the secret for which is in their Gogs account. This secret is used to create an OTP which can be used to SSH in as root.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/htb/craft/featured.png" />
     </item>
     
   </channel>

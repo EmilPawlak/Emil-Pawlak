@@ -9,7 +9,87 @@
     <managingEditor>EmilPawlak@protonmail.com (Emil Pawlak)</managingEditor>
     <webMaster>EmilPawlak@protonmail.com (Emil Pawlak)</webMaster>
     
-    <lastBuildDate>Thu, 02 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 04 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Api</title>
+      <link>http://localhost:1313/tags/api/</link>
+      <pubDate>Sat, 04 Apr 2026 00:00:00 +0000</pubDate>
+      <author>EmilPawlak@protonmail.com (Emil Pawlak)</author>
+      <guid>http://localhost:1313/tags/api/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Curl</title>
+      <link>http://localhost:1313/tags/curl/</link>
+      <pubDate>Sat, 04 Apr 2026 00:00:00 +0000</pubDate>
+      <author>EmilPawlak@protonmail.com (Emil Pawlak)</author>
+      <guid>http://localhost:1313/tags/curl/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Ffuf</title>
+      <link>http://localhost:1313/tags/ffuf/</link>
+      <pubDate>Sat, 04 Apr 2026 00:00:00 +0000</pubDate>
+      <author>EmilPawlak@protonmail.com (Emil Pawlak)</author>
+      <guid>http://localhost:1313/tags/ffuf/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Nc</title>
+      <link>http://localhost:1313/tags/nc/</link>
+      <pubDate>Sat, 04 Apr 2026 00:00:00 +0000</pubDate>
+      <author>EmilPawlak@protonmail.com (Emil Pawlak)</author>
+      <guid>http://localhost:1313/tags/nc/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Nmap</title>
+      <link>http://localhost:1313/tags/nmap/</link>
+      <pubDate>Sat, 04 Apr 2026 00:00:00 +0000</pubDate>
+      <author>EmilPawlak@protonmail.com (Emil Pawlak)</author>
+      <guid>http://localhost:1313/tags/nmap/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>http://localhost:1313/tags/python/</link>
+      <pubDate>Sat, 04 Apr 2026 00:00:00 +0000</pubDate>
+      <author>EmilPawlak@protonmail.com (Emil Pawlak)</author>
+      <guid>http://localhost:1313/tags/python/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Ssh</title>
+      <link>http://localhost:1313/tags/ssh/</link>
+      <pubDate>Sat, 04 Apr 2026 00:00:00 +0000</pubDate>
+      <author>EmilPawlak@protonmail.com (Emil Pawlak)</author>
+      <guid>http://localhost:1313/tags/ssh/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Vault</title>
+      <link>http://localhost:1313/tags/vault/</link>
+      <pubDate>Sat, 04 Apr 2026 00:00:00 +0000</pubDate>
+      <author>EmilPawlak@protonmail.com (Emil Pawlak)</author>
+      <guid>http://localhost:1313/tags/vault/</guid>
+      <description></description>
+      
+    </item>
     
     <item>
       <title>Addcomputer.py</title>
@@ -82,16 +162,6 @@
     </item>
     
     <item>
-      <title>Nmap</title>
-      <link>http://localhost:1313/tags/nmap/</link>
-      <pubDate>Thu, 02 Apr 2026 00:00:00 +0000</pubDate>
-      <author>EmilPawlak@protonmail.com (Emil Pawlak)</author>
-      <guid>http://localhost:1313/tags/nmap/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
       <title>Responder</title>
       <link>http://localhost:1313/tags/responder/</link>
       <pubDate>Thu, 02 Apr 2026 00:00:00 +0000</pubDate>
@@ -117,26 +187,6 @@
       <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
       <author>EmilPawlak@protonmail.com (Emil Pawlak)</author>
       <guid>http://localhost:1313/tags/oscp/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>CPTS</title>
-      <link>http://localhost:1313/tags/cpts/</link>
-      <pubDate>Mon, 30 Mar 2026 00:00:00 +0000</pubDate>
-      <author>EmilPawlak@protonmail.com (Emil Pawlak)</author>
-      <guid>http://localhost:1313/tags/cpts/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Windows</title>
-      <link>http://localhost:1313/tags/windows/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <author>EmilPawlak@protonmail.com (Emil Pawlak)</author>
-      <guid>http://localhost:1313/tags/windows/</guid>
       <description></description>
       
     </item>

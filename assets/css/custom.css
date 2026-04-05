@@ -7,10 +7,13 @@ code {
     font-weight: 400;
 }
 
-/*Adusting margins of different text elements*/
+/*Making the paragrapgs more readable*/
 p {
-    margin: 0.5em 0;
+    margin: 1.25em 0;
+    line-height: 1.4em;
 }
+
+/*Adusting margins of different text elements*/
 li {
     margin: 0;
 }
@@ -19,4 +22,19 @@ ol {
 }
 .highlight-wrapper {
     margin: 0 0.5em 0 0
+}
+
+/*Fixing padding so that thumbnails have the same spacing on top and bottom*/
+section article.article-link--card div.p-4 {
+    padding: 0 calc(var(--spacing) * 4);
+}
+
+/*Fixing spacing for the article summery*/
+div#CardViewProse div.article-link__summary {
+    margin-top: 0.75em;
+}
+
+/*Making margin between articles in the blog website smaller*/
+section article.article-link--simple {
+    margin-block-end: calc(calc(var(--spacing) * 5) * calc(1 - var(--tw-space-y-reverse)));
 }
